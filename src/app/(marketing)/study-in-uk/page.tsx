@@ -13,11 +13,14 @@ import {
 } from "lucide-react";
 import { CtaSection } from "@/components/shared/cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
+import { ProcessSection } from "@/components/sections/process-section";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { faqGroups } from "@/data/faqs";
 import { studyInUkContent } from "@/data/page-content";
 import { createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = createMetadata({
   title: "Study in UK from Nepal",
@@ -51,14 +54,6 @@ const ukAdvantages = [
       "Keep university shortlisting, SOP direction, references, and document preparation organized from day one.",
     icon: FileText,
   },
-];
-
-const pathwaySteps = [
-  "Academic profile review",
-  "Course and university shortlist",
-  "Application and SOP preparation",
-  "Offer, finance, and CAS guidance",
-  "Visa document preparation",
 ];
 
 const trustPoints = [
@@ -118,7 +113,7 @@ export default function StudyInUkPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href={siteConfig.mainCta.href}
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Book Free Counselling
                 <ArrowRight className="size-5" />
@@ -141,10 +136,10 @@ export default function StudyInUkPage() {
               {trustPoints.map((point) => (
                 <div
                   key={point}
-                  className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4"
+                  className="flex items-start gap-3 rounded-lg bg-muted p-4"
                 >
                   <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
-                  <span className="font-medium text-[#111c2d]">{point}</span>
+                  <span className="font-medium text-foreground">{point}</span>
                 </div>
               ))}
             </div>
@@ -157,9 +152,9 @@ export default function StudyInUkPage() {
           {ukAdvantages.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#cfc2d5] bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex size-14 items-center justify-center rounded-lg bg-[#dee8ff] text-primary">
+              <div className="flex size-14 items-center justify-center rounded-lg bg-icon-bg text-primary">
                 <item.icon className="size-7" />
               </div>
               <h2 className="mt-5 text-2xl font-bold">{item.title}</h2>
@@ -210,37 +205,11 @@ export default function StudyInUkPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfdaf2] py-20">
-        <div className="container-page">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="label-caps text-primary">Journey tracker</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
-              From first counselling to confident preparation
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-[#4d4353]">
-              Students trust a process when they can see the next step. This
-              roadmap keeps every application stage visible and manageable.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-4 lg:grid-cols-5">
-            {pathwaySteps.map((step, index) => (
-              <div
-                key={step}
-                className="relative rounded-lg border border-white/70 bg-white p-5 shadow-sm"
-              >
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary text-lg font-extrabold text-white">
-                  {index + 1}
-                </div>
-                <h3 className="mt-5 text-lg font-bold">{step}</h3>
-                {index < pathwaySteps.length - 1 ? (
-                  <div className="absolute left-16 top-11 hidden h-px w-[calc(100%-2rem)] bg-primary/30 lg:block" />
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessSection
+        eyebrow="Journey tracker"
+        title="From first counselling to confident preparation"
+        description="Students trust a process when they can see the next step. This roadmap keeps every application stage visible and manageable."
+      />
 
       <section className="section-padding bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -258,7 +227,10 @@ export default function StudyInUkPage() {
               {studyInUkContent.popularCourses.map((course) => (
                 <Badge
                   key={course}
-                  className="rounded-lg bg-[#e2dfff] px-4 py-2 text-sm font-semibold text-[#100563] hover:bg-[#c3c0ff]"
+                  className={cn(
+                    "rounded-lg px-4 py-2 text-sm font-semibold",
+                    "bg-[--badge-soft] text-[--badge-soft-fg] hover:bg-[--badge-soft-hover]",
+                  )}
                 >
                   {course}
                 </Badge>
@@ -285,7 +257,7 @@ export default function StudyInUkPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-[#f0f3ff]">
+      <section className="section-padding bg-muted">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="label-caps text-primary">Document preparation</p>
@@ -303,7 +275,7 @@ export default function StudyInUkPage() {
             {studyInUkContent.documents.map((document) => (
               <div
                 key={document}
-                className="flex items-start gap-3 rounded-lg border border-[#cfc2d5] bg-white p-5 font-semibold"
+                className="flex items-start gap-3 rounded-lg border border-border bg-white p-5 font-semibold"
               >
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
                 <span>{document}</span>

@@ -11,9 +11,11 @@ import {
 } from "lucide-react";
 import { CtaSection } from "@/components/shared/cta-section";
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { blogPosts } from "@/data/blog-posts";
 import { createMetadata } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = createMetadata({
   title: "UK Study Resources and Blog",
@@ -79,7 +81,7 @@ export default function BlogPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/counselling"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Ask a Counsellor
                 <ArrowRight className="size-5" />
@@ -102,12 +104,12 @@ export default function BlogPage() {
               {categories.map((category) => (
                 <div
                   key={category.title}
-                  className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4"
+                  className="flex items-start gap-3 rounded-lg bg-muted p-4"
                 >
                   <category.icon className="mt-0.5 size-5 shrink-0 text-primary" />
                   <div>
-                    <p className="font-bold text-[#111c2d]">{category.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-[#4d4353]">
+                    <p className="font-bold text-foreground">{category.title}</p>
+                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
                       {category.description}
                     </p>
                   </div>
@@ -134,7 +136,12 @@ export default function BlogPage() {
 
           <Card className="rounded-lg border-primary/30 bg-white p-2 shadow-xl shadow-primary/10">
             <CardHeader>
-              <Badge className="w-fit rounded-lg bg-[#e2dfff] text-[#100563] hover:bg-[#c3c0ff]">
+              <Badge
+                className={cn(
+                  "w-fit rounded-lg",
+                  "bg-[--badge-soft] text-[--badge-soft-fg] hover:bg-[--badge-soft-hover]",
+                )}
+              >
                 {featured.category}
               </Badge>
               <CardTitle className="text-3xl leading-tight">
@@ -157,7 +164,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfdaf2] py-20">
+      <section className="bg-surface-lavender py-20">
         <div className="container-page">
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
@@ -165,7 +172,7 @@ export default function BlogPage() {
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
                 Practical resources for each decision point
               </h2>
-              <p className="mt-4 text-lg leading-8 text-[#4d4353]">
+              <p className="mt-4 text-lg leading-8 text-muted-foreground">
                 Article records are centralized and ready to map to CMS models
                 with categories, SEO settings, and publishing status later.
               </p>

@@ -13,6 +13,7 @@ import {
 import { ServiceCard } from "@/components/cards/service-card";
 import { CtaSection } from "@/components/shared/cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
+import { buttonVariants } from "@/components/ui/button";
 import { faqGroups } from "@/data/faqs";
 import { services } from "@/data/services";
 import { createMetadata } from "@/lib/seo";
@@ -85,7 +86,7 @@ export default function ServicesPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/counselling"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Book Free Counselling
                 <ArrowRight className="size-5" />
@@ -105,21 +106,21 @@ export default function ServicesPage() {
               Clear support from first enquiry to pre-departure planning.
             </h2>
             <div className="mt-6 grid gap-3">
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <GraduationCap className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   UK-focused counselling and university selection
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <BookOpenCheck className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   IELTS readiness and academic English direction
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   Careful visa document guidance without outcome promises
                 </span>
               </div>
@@ -133,9 +134,9 @@ export default function ServicesPage() {
           {servicePillars.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#cfc2d5] bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex size-14 items-center justify-center rounded-lg bg-[#dee8ff] text-primary">
+              <div className="flex size-14 items-center justify-center rounded-lg bg-icon-bg text-primary">
                 <item.icon className="size-7" />
               </div>
               <h2 className="mt-5 text-2xl font-bold">{item.title}</h2>
@@ -168,14 +169,14 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfdaf2] py-20">
+      <section className="bg-surface-lavender py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="label-caps text-primary">How support is organized</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               A service system built around student confidence
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#4d4353]">
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
               Instead of repeating the full application roadmap here, this page
               explains the service areas. The detailed student journey now
               belongs on the Study in UK page where it has the strongest

@@ -1,16 +1,26 @@
 import { SectionHeading } from "@/components/shared/section-heading";
 import { processSteps } from "@/data/process";
 
-export function ProcessSection() {
+type ProcessSectionProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+};
+
+export function ProcessSection({
+  eyebrow = "Journey",
+  title = "The Road to the UK",
+  description = "A clear pathway from consultation to preparation, applications, visa guidance, and pre-departure planning.",
+}: ProcessSectionProps = {}) {
   return (
-    <section className="relative overflow-hidden bg-[#cfdaf2] py-20">
+    <section className="relative overflow-hidden bg-surface-lavender py-20">
       <div className="academic-grid absolute inset-0 opacity-50" />
       <div className="container-page relative z-10">
         <SectionHeading
           className="mx-auto text-center"
-          eyebrow="Journey"
-          title="The Road to the UK"
-          description="A clear pathway from consultation to preparation, applications, visa guidance, and pre-departure planning."
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
         />
         <div className="relative mt-16 grid gap-10 md:grid-cols-5">
           <div className="absolute left-0 right-0 top-6 hidden h-px bg-border md:block" />

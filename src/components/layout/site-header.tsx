@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Logo } from "@/components/shared/logo";
 import { ModeToggle } from "@/components/shared/mode-toggle";
+import { buttonVariants } from "@/components/ui/button";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -40,7 +41,7 @@ export function SiteHeader() {
           <ModeToggle />
           <Link
             href={siteConfig.mainCta.href}
-            className="hidden rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-[#6a0dad] active:scale-[0.98] md:inline-flex"
+            className={cn(buttonVariants(), "hidden md:inline-flex")}
           >
             Book a Consultation
           </Link>

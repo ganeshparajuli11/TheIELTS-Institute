@@ -6,13 +6,6 @@ import { toast } from "sonner";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Form,
   FormControl,
   FormField,
@@ -23,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 const loginSchema = z.object({
-  email: z.email("Enter a valid email address."),
+  email: z.string().email("Enter a valid email address."),
   password: z.string().min(8, "Password must be at least 8 characters."),
 });
 
@@ -36,49 +29,60 @@ export function LoginForm() {
   });
 
   function onSubmit() {
-    // TODO: connect auth and RBAC.
-    toast.info("Authentication will be connected in a later phase.");
+    // TODO: Replace with secure server action after Phase 2 auth backend is implemented.
+    // TODO: Must use HttpOnly cookie sessions — never localStorage.
+    // TODO: Backend must rate-limit login attempts per IP (already scaffolded in src/lib/rate-limit.ts).
+    // TODO: Show only generic error messages — never reveal whether an email exists.
+    toast.info("Authentication will be connected in Phase 2.");
   }
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>No authentication is connected yet.</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-5">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="admin@example.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <Input type="password" placeholder="Password" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit">Continue</Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email address</FormLabel>
+              <FormControl>
+                <Input
+                  type="email"
+                  placeholder="you@example.com"
+                  autoComplete="email"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl>
+                <Input
+                  type="password"
+                  placeholder="Enter your password"
+                  autoComplete="current-password"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button
+          type="submit"
+          className="mt-1 w-full"
+          disabled={form.formState.isSubmitting}
+        >
+          {form.formState.isSubmitting ? "Signing in…" : "Sign in"}
+        </Button>
+      </form>
+    </Form>
   );
 }

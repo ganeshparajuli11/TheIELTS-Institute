@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
 type CtaSectionProps = {
   title?: string;
@@ -23,7 +25,7 @@ export function CtaSection({
           <p className="mt-6 text-lg leading-8 text-white/85">{description}</p>
           <Link
             href={siteConfig.mainCta.href}
-            className="mt-10 inline-flex min-h-16 items-center justify-center gap-2 rounded-lg bg-white px-10 py-5 text-xl font-bold text-primary shadow-xl transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+            className={cn(buttonVariants({ variant: "inverted", size: "xl" }), "mt-10")}
           >
             Book Your Free Consultation Now
             <ArrowRight className="size-5" />

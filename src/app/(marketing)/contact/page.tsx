@@ -12,6 +12,7 @@ import {
 import { ContactForm } from "@/components/forms/contact-form";
 import { CtaSection } from "@/components/shared/cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
+import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { faqGroups } from "@/data/faqs";
 import { contactContent } from "@/data/page-content";
@@ -84,7 +85,7 @@ export default function ContactPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/counselling"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Book Free Counselling
                 <ArrowRight className="size-5" />
@@ -104,16 +105,16 @@ export default function ContactPage() {
               Share your academic background and preferred UK intake.
             </h2>
             <div className="mt-6 grid gap-3">
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <MessageSquareText className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   Include your course interest, current education level, and
                   IELTS status if available.
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <Clock className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   The team can respond with next-step counselling priorities.
                 </span>
               </div>
@@ -127,9 +128,9 @@ export default function ContactPage() {
           {contactMethods.map((method) => (
             <article
               key={method.label}
-              className="rounded-lg border border-[#cfc2d5] bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex size-12 items-center justify-center rounded-lg bg-[#dee8ff] text-primary">
+              <div className="flex size-12 items-center justify-center rounded-lg bg-icon-bg text-primary">
                 <method.icon className="size-6" />
               </div>
               <p className="mt-5 text-sm font-bold uppercase tracking-wide text-primary">
@@ -183,14 +184,14 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfdaf2] py-20">
+      <section className="bg-surface-lavender py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p className="label-caps text-primary">Map</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               {contactContent.mapTitle}
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#4d4353]">
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
               {contactContent.mapDescription}
             </p>
           </div>

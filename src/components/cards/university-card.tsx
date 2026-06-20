@@ -20,7 +20,7 @@ export function UniversityCard({ university }: { university: University }) {
             {university.name}
           </CardTitle>
           {university.featured ? (
-            <Badge className="rounded-lg bg-[#e2dfff] text-[#100563] hover:bg-[#c3c0ff]">
+            <Badge className="rounded-lg bg-[--badge-soft] text-[--badge-soft-fg] hover:bg-[--badge-soft-hover]">
               Featured
             </Badge>
           ) : null}

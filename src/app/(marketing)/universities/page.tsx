@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { UniversityCard } from "@/components/cards/university-card";
 import { CtaSection } from "@/components/shared/cta-section";
+import { buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { universities } from "@/data/universities";
 import { createMetadata } from "@/lib/seo";
@@ -82,7 +83,7 @@ export default function UniversitiesPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/counselling"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Build My Shortlist
                 <ArrowRight className="size-5" />
@@ -102,19 +103,19 @@ export default function UniversitiesPage() {
               We help students compare universities with a calm academic lens.
             </h2>
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <div className="rounded-lg bg-[#f0f3ff] p-4">
+              <div className="rounded-lg bg-muted p-4">
                 <p className="text-3xl font-extrabold text-primary">
                   {universities.length}
                 </p>
-                <p className="mt-1 text-sm font-semibold text-[#4d4353]">
+                <p className="mt-1 text-sm font-semibold text-muted-foreground">
                   Sample profiles
                 </p>
               </div>
-              <div className="rounded-lg bg-[#f0f3ff] p-4">
+              <div className="rounded-lg bg-muted p-4">
                 <p className="text-3xl font-extrabold text-primary">
                   {featured.length}
                 </p>
-                <p className="mt-1 text-sm font-semibold text-[#4d4353]">
+                <p className="mt-1 text-sm font-semibold text-muted-foreground">
                   Featured routes
                 </p>
               </div>
@@ -132,9 +133,9 @@ export default function UniversitiesPage() {
           {selectionPrinciples.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#cfc2d5] bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex size-14 items-center justify-center rounded-lg bg-[#dee8ff] text-primary">
+              <div className="flex size-14 items-center justify-center rounded-lg bg-icon-bg text-primary">
                 <item.icon className="size-7" />
               </div>
               <h2 className="mt-5 text-2xl font-bold">{item.title}</h2>
@@ -179,14 +180,14 @@ export default function UniversitiesPage() {
         </div>
       </section>
 
-      <section className="bg-[#cfdaf2] py-20">
+      <section className="bg-surface-lavender py-20">
         <div className="container-page grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="label-caps text-primary">Featured profiles</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               Start with routes that are easier to compare
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#4d4353]">
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">
               Featured profiles can later be controlled from the admin panel.
               For now, they show how priority university cards should appear
               without claiming verified partnerships.

@@ -50,10 +50,25 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit() {
-    // TODO: connect API endpoint for contact messages.
-    toast.success("Thanks. Your contact enquiry has been prepared.");
-    form.reset();
+  async function onSubmit(values: ContactValues) {
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = (await res.json()) as { success: boolean; message?: string };
+      if (!res.ok) {
+        toast.error(data.message ?? "Something went wrong. Please try again.");
+        return;
+      }
+      toast.success(
+        data.message ?? "Your enquiry has been received. We will be in touch soon.",
+      );
+      form.reset();
+    } catch {
+      toast.error("Unable to send your enquiry. Please check your connection and try again.");
+    }
   }
 
   return (

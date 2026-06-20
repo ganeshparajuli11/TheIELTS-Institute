@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { SuccessStoryCard } from "@/components/cards/success-story-card";
 import { CtaSection } from "@/components/shared/cta-section";
+import { buttonVariants } from "@/components/ui/button";
 import { successStories } from "@/data/success-stories";
 import { createMetadata } from "@/lib/seo";
 
@@ -84,7 +85,7 @@ export default function SuccessStoriesPage() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/counselling"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                className={buttonVariants({ variant: "inverted", size: "xl" })}
               >
                 Start Your Story
                 <ArrowRight className="size-5" />
@@ -104,17 +105,17 @@ export default function SuccessStoriesPage() {
               Trust comes from honest, verified student content.
             </h2>
             <div className="mt-6 grid gap-3">
-              <div className="rounded-lg bg-[#f0f3ff] p-4">
+              <div className="rounded-lg bg-muted p-4">
                 <p className="text-3xl font-extrabold text-primary">
                   {stories.length}
                 </p>
-                <p className="mt-1 text-sm font-semibold text-[#4d4353]">
+                <p className="mt-1 text-sm font-semibold text-muted-foreground">
                   Published sample stories
                 </p>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-[#f0f3ff] p-4">
+              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
                 <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-[#111c2d]">
+                <span className="font-medium text-foreground">
                   Future CMS can manage approvals, quotes, images, and status.
                 </span>
               </div>
@@ -128,9 +129,9 @@ export default function SuccessStoriesPage() {
           {storyPrinciples.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-[#cfc2d5] bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
             >
-              <div className="flex size-14 items-center justify-center rounded-lg bg-[#dee8ff] text-primary">
+              <div className="flex size-14 items-center justify-center rounded-lg bg-icon-bg text-primary">
                 <item.icon className="size-7" />
               </div>
               <h2 className="mt-5 text-2xl font-bold">{item.title}</h2>
@@ -172,14 +173,14 @@ export default function SuccessStoriesPage() {
         </section>
       ) : null}
 
-      <section className="bg-[#cfdaf2] py-20">
+      <section className="bg-surface-lavender py-20">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
             <p className="label-caps text-primary">Published stories</p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               Real journeys should feel personal, not exaggerated
             </h2>
-            <p className="mt-4 text-lg leading-8 text-[#4d4353]">
+            <p className="mt-4 text-lg leading-8 text-muted-foreground">
               This page keeps outcomes professional and student-centered while
               leaving room for verified CMS-managed stories later.
             </p>

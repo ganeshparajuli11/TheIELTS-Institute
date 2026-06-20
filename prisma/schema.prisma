@@ -1,0 +1,145 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Enums ──────────────────────────────────────────────────────────────────
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum EnquiryType {
+  CONTACT
+  COUNSELLING
+}
+
+enum EnquiryStatus {
+  NEW
+  IN_REVIEW
+  CONTACTED
+  CLOSED
+}
+
+enum AuditAction {
+  ADMIN_LOGIN_SUCCESS
+  ADMIN_LOGIN_FAILED
+  ENQUIRY_CREATED
+  ENQUIRY_STATUS_CHANGED
+  ENQUIRY_NOTE_ADDED
+}
+
+// ── Models ─────────────────────────────────────────────────────────────────
+
+model User {
+  id           String     @id @default(cuid())
+  name         String
+  email        String     @unique
+  passwordHash String
+  role         Role       @default(ADMIN)
+  status       UserStatus @default(ACTIVE)
+  lastLoginAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  enquiryNotes EnquiryNote[]
+  followUps    FollowUp[]
+  auditLogs    AuditLog[]
+
+  @@index([email])
+}
+
+model Enquiry {
+  id           String        @id @default(cuid())
+  type         EnquiryType
+  fullName     String
+  email        String
+  phone        String
+  message      String
+  sourcePage   String        @default("/contact")
+  status       EnquiryStatus @default(NEW)
+  assignedToId String?
+  consentAt    DateTime
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  counsellingProfile CounsellingProfile?
+  notes              EnquiryNote[]
+  followUps          FollowUp[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model CounsellingProfile {
+  id                   String   @id @default(cuid())
+  enquiryId            String   @unique
+  currentLocation      String
+  highestQualification String
+  preferredCourse      String
+  preferredIntake      String
+  englishStatus        String
+  preferredUniversity  String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  enquiry Enquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+}
+
+model EnquiryNote {
+  id        String   @id @default(cuid())
+  enquiryId String
+  authorId  String
+  note      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  enquiry Enquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  author  User    @relation(fields: [authorId], references: [id])
+
+  @@index([enquiryId])
+}
+
+model FollowUp {
+  id           String    @id @default(cuid())
+  enquiryId    String
+  assignedToId String
+  title        String
+  note         String?
+  dueDate      DateTime?
+  status       String    @default("PENDING")
+  createdAt    DateTime  @default(now())
+  completedAt  DateTime?
+
+  enquiry    Enquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+  assignedTo User    @relation(fields: [assignedToId], references: [id])
+
+  @@index([enquiryId])
+}
+
+model AuditLog {
+  id         String      @id @default(cuid())
+  userId     String?
+  action     AuditAction
+  entityType String?
+  entityId   String?
+  meta       Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime    @default(now())
+
+  user User? @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([createdAt])
+}

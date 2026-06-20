@@ -60,10 +60,25 @@ export function CounsellingForm() {
     },
   });
 
-  function onSubmit() {
-    // TODO: connect API endpoint for counselling booking.
-    toast.success("Thanks. Your counselling request has been prepared.");
-    form.reset();
+  async function onSubmit(values: CounsellingValues) {
+    try {
+      const res = await fetch("/api/counselling", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = (await res.json()) as { success: boolean; message?: string };
+      if (!res.ok) {
+        toast.error(data.message ?? "Something went wrong. Please try again.");
+        return;
+      }
+      toast.success(
+        data.message ?? "Your counselling request has been received. We will be in touch soon.",
+      );
+      form.reset();
+    } catch {
+      toast.error("Unable to send your request. Please check your connection and try again.");
+    }
   }
 
   return (

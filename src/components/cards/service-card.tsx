@@ -8,9 +8,9 @@ export function ServiceCard({ service }: { service: Service }) {
   const Icon = iconMap[service.icon];
 
   return (
-    <Card className="group flex h-full flex-col rounded-none border-border/80 bg-white p-2 transition hover:-translate-y-1 hover:shadow-xl">
+    <Card className="group flex h-full flex-col border-border/80 bg-white p-2 transition hover:-translate-y-1 hover:shadow-xl">
       <CardHeader>
-        <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-[#dee8ff] text-primary transition group-hover:bg-primary group-hover:text-white">
+        <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-icon-bg text-primary transition group-hover:bg-primary group-hover:text-white">
           <Icon className="size-8" />
         </div>
         <CardTitle className="text-2xl">{service.title}</CardTitle>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 export function HeroSection() {
@@ -25,7 +26,7 @@ export function HeroSection() {
           </span>
           <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
             Your Gateway to the UK&apos;s{" "}
-            <span className="text-[#dfb7ff] underline decoration-2 underline-offset-8">
+            <span className="text-[--hero-highlight] underline decoration-2 underline-offset-8">
               Elite Universities
             </span>
           </h1>
@@ -37,7 +38,7 @@ export function HeroSection() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
               href={siteConfig.mainCta.href}
-              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-bold text-primary shadow-lg transition hover:bg-[#f1daff] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+              className={buttonVariants({ variant: "inverted", size: "xl" })}
             >
               Start Your Journey Today
               <ArrowRight className="size-5" />

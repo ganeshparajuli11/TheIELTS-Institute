@@ -82,7 +82,7 @@ function HomeReason({
 }) {
   return (
     <div className="flex gap-6">
-      <div className="flex size-12 shrink-0 items-center justify-center rounded bg-[#dee8ff] text-primary">
+      <div className="flex size-12 shrink-0 items-center justify-center rounded bg-icon-bg text-primary">
         <Icon className="size-6" />
       </div>
       <div>

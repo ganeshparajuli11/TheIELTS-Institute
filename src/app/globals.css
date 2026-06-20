@@ -36,6 +36,8 @@
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
+  --color-icon-bg: var(--icon-bg);
+  --color-surface-lavender: var(--surface-lavender);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
   --radius-sm: calc(var(--radius) * 0.6);
@@ -71,6 +73,12 @@
   --chart-3: #8333c6;
   --chart-4: #263143;
   --chart-5: #a7a5ff;
+  --icon-bg: #dee8ff;
+  --surface-lavender: #cfdaf2;
+  --badge-soft: #e2dfff;
+  --badge-soft-hover: #c3c0ff;
+  --badge-soft-fg: #100563;
+  --hero-highlight: #dfb7ff;
   --radius: 0.5rem;
   --sidebar: #ffffff;
   --sidebar-foreground: #111c2d;
