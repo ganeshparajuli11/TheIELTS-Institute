@@ -5,7 +5,7 @@ export function AdminPlaceholder({ title }: { title: string }) {
     <section className="space-y-6">
       <div>
         <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="text-muted-foreground mt-2 text-sm">
           TODO: connect auth, RBAC, database, and API.
         </p>
       </div>

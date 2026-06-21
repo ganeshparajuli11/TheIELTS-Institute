@@ -39,10 +39,7 @@ export const services: Service[] = [
       "Our team helps compare UK university options using course suitability, entry requirements, progression goals, and student preferences without pushing unrelated destinations.",
     icon: "School",
     ctaLabel: "Explore universities",
-    seoKeywords: [
-      "UK university application from Nepal",
-      "UK universities Nepal",
-    ],
+    seoKeywords: ["UK university application from Nepal", "UK universities Nepal"],
   },
   {
     title: "Application support",

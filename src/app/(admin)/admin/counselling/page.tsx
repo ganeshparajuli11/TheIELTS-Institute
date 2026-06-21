@@ -90,7 +90,7 @@ export default function AdminCounsellingPage() {
           icon={ClipboardList}
         />
       ) : (
-        <div className="rounded-lg border border-border bg-card">
+        <div className="border-border bg-card rounded-lg border">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
@@ -110,25 +110,25 @@ export default function AdminCounsellingPage() {
                     <TableCell className="pl-5">
                       <div>
                         <p className="text-sm font-medium">{submission.fullName}</p>
-                        <p className="text-xs text-muted-foreground">{submission.email}</p>
-                        <p className="text-xs text-muted-foreground">{submission.location}</p>
+                        <p className="text-muted-foreground text-xs">{submission.email}</p>
+                        <p className="text-muted-foreground text-xs">{submission.location}</p>
                       </div>
                     </TableCell>
                     <TableCell className="hidden sm:table-cell">
                       <div>
                         <p className="text-sm">{submission.preferredCourse}</p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-muted-foreground text-xs">
                           {submission.highestQualification}
                         </p>
                       </div>
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-muted-foreground text-sm">
                         {submission.preferredIntake}
                       </span>
                     </TableCell>
                     <TableCell className="hidden lg:table-cell">
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-muted-foreground text-sm">
                         {submission.englishStatus}
                       </span>
                     </TableCell>
@@ -136,7 +136,7 @@ export default function AdminCounsellingPage() {
                       <AdminStatusBadge status={submission.status} />
                     </TableCell>
                     <TableCell className="hidden xl:table-cell">
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-muted-foreground text-xs">
                         {new Date(submission.createdAt).toLocaleDateString("en-GB", {
                           day: "numeric",
                           month: "short",
@@ -169,8 +169,8 @@ export default function AdminCounsellingPage() {
               </TableBody>
             </Table>
           </div>
-          <div className="border-t border-border px-5 py-3">
-            <p className="text-xs text-muted-foreground">
+          <div className="border-border border-t px-5 py-3">
+            <p className="text-muted-foreground text-xs">
               Showing {filtered.length} of {submissions.length} submissions
             </p>
           </div>

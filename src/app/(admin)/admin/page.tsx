@@ -12,8 +12,9 @@ import {
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminStatCard } from "@/components/admin/admin-stat-card";
 import { AdminStatusBadge } from "@/components/admin/admin-status-badge";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import {
   Table,
   TableBody,
@@ -41,11 +42,7 @@ export default function AdminDashboardPage() {
 
       {/* KPI cards */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <AdminStatCard
-          label="Total Enquiries"
-          value={stats.totalEnquiries}
-          icon={MessageSquare}
-        />
+        <AdminStatCard label="Total Enquiries" value={stats.totalEnquiries} icon={MessageSquare} />
         <AdminStatCard
           label="New Enquiries"
           value={stats.newEnquiries}
@@ -97,11 +94,12 @@ export default function AdminDashboardPage() {
         <Card className="lg:col-span-2">
           <CardHeader className="flex flex-row items-center justify-between pb-3">
             <CardTitle className="text-base font-semibold">Recent Enquiries</CardTitle>
-            <Button variant="ghost" size="sm" asChild className="h-7 text-xs">
-              <Link href="/admin/enquiries">
-                View all <ArrowRight className="ml-1 h-3 w-3" />
-              </Link>
-            </Button>
+            <Link
+              href="/admin/enquiries"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "h-7 text-xs")}
+            >
+              View all <ArrowRight className="ml-1 h-3 w-3" />
+            </Link>
           </CardHeader>
           <CardContent className="p-0">
             <Table>
@@ -119,11 +117,11 @@ export default function AdminDashboardPage() {
                     <TableCell className="pl-6">
                       <div>
                         <p className="text-sm font-medium">{enquiry.fullName}</p>
-                        <p className="text-xs text-muted-foreground">{enquiry.email}</p>
+                        <p className="text-muted-foreground text-xs">{enquiry.email}</p>
                       </div>
                     </TableCell>
                     <TableCell className="hidden sm:table-cell">
-                      <span className="text-sm capitalize text-muted-foreground">
+                      <span className="text-muted-foreground text-sm capitalize">
                         {enquiry.enquiryType?.replace(/-/g, " ")}
                       </span>
                     </TableCell>
@@ -131,7 +129,7 @@ export default function AdminDashboardPage() {
                       <AdminStatusBadge status={enquiry.status} />
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-muted-foreground text-xs">
                         {new Date(enquiry.createdAt).toLocaleDateString("en-GB", {
                           day: "numeric",
                           month: "short",
@@ -152,18 +150,17 @@ export default function AdminDashboardPage() {
           </CardHeader>
           <CardContent className="grid gap-2">
             {adminQuickActions.map((action) => (
-              <Button
+              <Link
                 key={action.label}
-                variant="outline"
-                size="sm"
-                asChild
-                className="h-9 justify-start text-sm font-normal"
+                href={action.href}
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "sm" }),
+                  "h-9 justify-start text-sm font-normal",
+                )}
               >
-                <Link href={action.href}>
-                  <ArrowRight className="mr-2 h-3.5 w-3.5 text-primary" />
-                  {action.label}
-                </Link>
-              </Button>
+                <ArrowRight className="text-primary mr-2 h-3.5 w-3.5" />
+                {action.label}
+              </Link>
             ))}
           </CardContent>
         </Card>

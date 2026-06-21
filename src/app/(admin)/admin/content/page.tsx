@@ -48,8 +48,7 @@ const contentSections = [
   },
   {
     title: "Compliance & Disclaimer",
-    description:
-      "Legal disclaimer text shown throughout the site. Must not promise visa outcomes.",
+    description: "Legal disclaimer text shown throughout the site. Must not promise visa outcomes.",
     href: "/admin/content",
     status: "Frontend only — TODO: connect to database.",
   },
@@ -76,18 +75,13 @@ export default function AdminContentPage() {
       <div className="grid gap-4 sm:grid-cols-2">
         {contentSections.map((section) => (
           <Card key={section.title} className="overflow-hidden">
-            <CardHeader className="pb-2 pt-4">
+            <CardHeader className="pt-4 pb-2">
               <CardTitle className="text-sm font-semibold">{section.title}</CardTitle>
             </CardHeader>
             <CardContent className="pb-4">
-              <p className="text-xs text-muted-foreground">{section.description}</p>
+              <p className="text-muted-foreground text-xs">{section.description}</p>
               <p className="mt-2 text-[10px] text-amber-600">{section.status}</p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-3 h-7 text-xs"
-                disabled
-              >
+              <Button variant="outline" size="sm" className="mt-3 h-7 text-xs" disabled>
                 {/* TODO: Enable editing after backend CMS is implemented. */}
                 Edit section
                 <ExternalLink className="ml-1.5 h-3 w-3" />

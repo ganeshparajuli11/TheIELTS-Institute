@@ -14,7 +14,7 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/85 backdrop-blur">
+    <header className="bg-background/85 sticky top-0 z-40 border-b backdrop-blur">
       <div className="container-page flex min-h-18 items-center justify-between gap-4 py-3">
         <Logo />
         <nav className="hidden items-center gap-5 xl:flex">
@@ -28,7 +28,7 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "label-caps border-b-2 border-transparent py-1 text-muted-foreground transition hover:text-primary",
+                  "label-caps text-muted-foreground hover:text-primary border-b-2 border-transparent py-1 transition",
                   active && "border-primary text-primary",
                 )}
               >

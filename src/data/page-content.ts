@@ -28,8 +28,7 @@ export const counsellingContent = {
 
 export const contactContent = {
   mapTitle: "Office location",
-  mapDescription:
-    "Final map details can be connected once the confirmed office listing is ready.",
+  mapDescription: "Final map details can be connected once the confirmed office listing is ready.",
   mapLabel: "Kathmandu office location area",
 };
 

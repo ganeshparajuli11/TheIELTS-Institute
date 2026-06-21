@@ -6,9 +6,7 @@ export const contactSchema = z.object({
   phone: z.string().min(7, "Enter a valid phone number.").max(30),
   enquiryType: z.enum(["counselling", "application", "ielts", "visa"]),
   message: z.string().min(10, "Enter a short message.").max(2000),
-  consent: z
-    .boolean()
-    .refine((v) => v === true, "Consent is required before submitting."),
+  consent: z.boolean().refine((v) => v === true, "Consent is required before submitting."),
 });
 
 export type ContactPayload = z.infer<typeof contactSchema>;

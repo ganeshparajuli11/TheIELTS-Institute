@@ -5,7 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const seoEntities = [
   {
     label: "Static Pages",
-    pages: ["Home", "Study in UK", "Universities", "Services", "Success Stories", "Blog", "Contact", "Counselling"],
+    pages: [
+      "Home",
+      "Study in UK",
+      "Universities",
+      "Services",
+      "Success Stories",
+      "Blog",
+      "Contact",
+      "Counselling",
+    ],
     status: "Managed in src/config/site.ts — TODO: connect to database.",
   },
   {
@@ -31,10 +40,19 @@ const seoEntities = [
 ];
 
 const SEO_TIPS = [
-  { label: "Title length", tip: "Aim for 50–60 characters. Longer titles may be truncated in search results." },
-  { label: "Meta description", tip: "Aim for 140–160 characters. Include the main keyword naturally." },
+  {
+    label: "Title length",
+    tip: "Aim for 50–60 characters. Longer titles may be truncated in search results.",
+  },
+  {
+    label: "Meta description",
+    tip: "Aim for 140–160 characters. Include the main keyword naturally.",
+  },
   { label: "Keywords", tip: "Use 3–5 relevant keywords. Do not keyword-stuff." },
-  { label: "Canonical URL", tip: "Set a canonical URL on all paginated or duplicate content pages." },
+  {
+    label: "Canonical URL",
+    tip: "Set a canonical URL on all paginated or duplicate content pages.",
+  },
   { label: "No-index", tip: "Mark admin pages, internal tools, and thin content with no-index." },
 ];
 
@@ -55,14 +73,14 @@ export default function AdminSeoPage() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-3">
-        <div className="lg:col-span-2 space-y-4">
+        <div className="space-y-4 lg:col-span-2">
           {seoEntities.map((entity) => (
             <Card key={entity.label}>
-              <CardHeader className="pb-2 pt-4">
+              <CardHeader className="pt-4 pb-2">
                 <CardTitle className="text-sm font-semibold">{entity.label}</CardTitle>
               </CardHeader>
               <CardContent className="pb-4">
-                <ul className="list-disc pl-4 text-xs text-muted-foreground">
+                <ul className="text-muted-foreground list-disc pl-4 text-xs">
                   {entity.pages.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -75,14 +93,14 @@ export default function AdminSeoPage() {
 
         <div>
           <Card>
-            <CardHeader className="pb-2 pt-4">
+            <CardHeader className="pt-4 pb-2">
               <CardTitle className="text-sm font-semibold">SEO Guidelines</CardTitle>
             </CardHeader>
-            <CardContent className="pb-4 grid gap-3">
+            <CardContent className="grid gap-3 pb-4">
               {SEO_TIPS.map((tip) => (
                 <div key={tip.label}>
                   <p className="text-xs font-medium">{tip.label}</p>
-                  <p className="text-xs text-muted-foreground">{tip.tip}</p>
+                  <p className="text-muted-foreground text-xs">{tip.tip}</p>
                 </div>
               ))}
             </CardContent>

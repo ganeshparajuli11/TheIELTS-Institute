@@ -1,0 +1,35 @@
+[
+  {
+    "id": "blog-1",
+    "title": "How to plan your UK study application from Nepal",
+    "slug": "how-to-plan-uk-study-application-from-nepal",
+    "category": "Application planning",
+    "excerpt": "A guide for timelines, documents, intake planning, and counselling preparation.",
+    "content": "",
+    "author": "IELTS Institute Team",
+    "status": "published",
+    "updatedAt": "2026-06-01T00:00:00.000Z"
+  },
+  {
+    "id": "blog-2",
+    "title": "IELTS preparation habits for UK-bound students",
+    "slug": "ielts-preparation-habits-uk-bound-students",
+    "category": "IELTS guidance",
+    "excerpt": "A practical resource for students building English test readiness.",
+    "content": "",
+    "author": "IELTS Institute Team",
+    "status": "published",
+    "updatedAt": "2026-06-01T00:00:00.000Z"
+  },
+  {
+    "id": "blog-3",
+    "title": "Understanding UK intakes: September, January, and May",
+    "slug": "understanding-uk-intakes",
+    "category": "Study in UK",
+    "excerpt": "A resource explaining intake options and how to choose the right timing.",
+    "content": "",
+    "author": "IELTS Institute Team",
+    "status": "published",
+    "updatedAt": "2026-06-01T00:00:00.000Z"
+  }
+]

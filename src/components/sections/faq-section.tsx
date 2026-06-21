@@ -22,11 +22,7 @@ export function FaqSection({
 }: FaqSectionProps) {
   return (
     <section className="container-page section-padding">
-      <SectionHeading
-        eyebrow={eyebrow}
-        title={title}
-        description={description}
-      />
+      <SectionHeading eyebrow={eyebrow} title={title} description={description} />
       <Accordion className="mt-10 max-w-3xl">
         {items.map((faq) => (
           <AccordionItem key={faq.question} value={faq.question}>

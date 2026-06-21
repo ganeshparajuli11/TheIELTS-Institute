@@ -1,5 +1,7 @@
 # Claude Code Prompt — Design Consistency Audit & Fix
+
 # Repo: github.com/ganeshparajuli11/TheIELTS-Institute
+
 # Paste everything below into Claude Code in the repo root.
 
 ---
@@ -45,8 +47,8 @@ education consultancy.
    - The academic-grid background pattern.
    - Chip/badge styling (e.g. "RUSSELL GROUP" badge, "8.5 BAND" badge,
      "Most Popular" ribbon in `code-5.html`).
-   These HTML files are READ-ONLY references for visual patterns. Do not
-   modify them. Do not generate new files in `html-files/`.
+     These HTML files are READ-ONLY references for visual patterns. Do not
+     modify them. Do not generate new files in `html-files/`.
 
 ## The actual problem (confirmed by direct repo inspection)
 
@@ -68,14 +70,14 @@ colors instead of using the shared design system tokens and the shared
    - `src/components/shared/cta-section.tsx` — hand-rolled
      `rounded-lg bg-white px-10 py-5 text-xl font-bold text-primary` with
      a **hardcoded hex** `hover:bg-[#f1daff]` instead of a token.
-   Fix: every CTA button in the app must render through `buttonVariants`
-   (or the `<Button>` component) from `src/components/ui/button.tsx`. If
-   the existing `buttonVariants` sizes (`default`, `sm`, `lg`, etc.) don't
-   cover the large hero/CTA-section button size used in the Stitch design,
-   ADD a new size variant (e.g. `xl`) to `buttonVariants` rather than
-   hand-rolling classes again. No component should contain a raw hex
-   color in a `className` string — if a color isn't available as a
-   Tailwind/CSS-variable token, add it to `globals.css` `:root` first.
+     Fix: every CTA button in the app must render through `buttonVariants`
+     (or the `<Button>` component) from `src/components/ui/button.tsx`. If
+     the existing `buttonVariants` sizes (`default`, `sm`, `lg`, etc.) don't
+     cover the large hero/CTA-section button size used in the Stitch design,
+     ADD a new size variant (e.g. `xl`) to `buttonVariants` rather than
+     hand-rolling classes again. No component should contain a raw hex
+     color in a `className` string — if a color isn't available as a
+     Tailwind/CSS-variable token, add it to `globals.css` `:root` first.
 
 2. **Card shape contradicts the documented design system:**
    - `src/components/cards/service-card.tsx` overrides the base
@@ -101,7 +103,7 @@ colors instead of using the shared design system tokens and the shared
    - `src/app/(marketing)/blog/page.tsx`
    - `src/app/(marketing)/contact/page.tsx`
    - `src/app/(marketing)/counselling/page.tsx`
-   For each one, check:
+     For each one, check:
    - Does every button on the page route through `buttonVariants`?
    - Does every card route through the shared `Card` component (or a
      card component in `src/components/cards/`) with no one-off
@@ -126,8 +128,8 @@ colors instead of using the shared design system tokens and the shared
      `// TODO` comment explaining it's a stub and why, and confirm with
      a clear final summary that this was a deliberate choice, not a
      missed page.
-   Default to option 1 unless you find evidence the page is meant to be
-   deprioritized.
+     Default to option 1 unless you find evidence the page is meant to be
+     deprioritized.
 
 5. **Stepper / "Journey Tracker" component**: `code-1.html` and
    `code-2.html` each implement the 4-step "Consultation → IELTS →

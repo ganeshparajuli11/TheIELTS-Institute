@@ -8,20 +8,10 @@ export const counsellingSchema = z.object({
   preferredCourse: z.string().min(2, "Enter your preferred course.").max(100),
   highestQualification: z.enum(["+2", "Bachelor", "Master", "Other"]),
   preferredIntake: z.enum(["September", "January", "May", "Not sure yet"]),
-  englishStatus: z.enum([
-    "Not started",
-    "Preparing",
-    "Test booked",
-    "Score received",
-  ]),
+  englishStatus: z.enum(["Not started", "Preparing", "Test booked", "Score received"]),
   preferredUniversity: z.string().max(200).optional(),
-  message: z
-    .string()
-    .min(10, "Tell us a little about your UK study plans.")
-    .max(2000),
-  consent: z
-    .boolean()
-    .refine((v) => v === true, "Consent is required before submitting."),
+  message: z.string().min(10, "Tell us a little about your UK study plans.").max(2000),
+  consent: z.boolean().refine((v) => v === true, "Consent is required before submitting."),
 });
 
 export type CounsellingPayload = z.infer<typeof counsellingSchema>;

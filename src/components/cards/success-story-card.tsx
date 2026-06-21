@@ -4,8 +4,8 @@ import { type SuccessStory } from "@/data/success-stories";
 
 export function SuccessStoryCard({ story }: { story: SuccessStory }) {
   return (
-    <Card className="group overflow-hidden rounded-lg border-border/80 bg-white transition hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10">
-      <div className="relative aspect-[4/3] bg-muted">
+    <Card className="group border-border/80 hover:border-primary hover:shadow-primary/10 overflow-hidden rounded-lg bg-white transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="bg-muted relative aspect-[4/3]">
         <Image
           src={story.image}
           alt={`${story.studentName} success story visual`}
@@ -15,13 +15,13 @@ export function SuccessStoryCard({ story }: { story: SuccessStory }) {
       </div>
       <CardHeader>
         <CardTitle className="text-2xl">{story.studentName}</CardTitle>
-        <p className="text-sm font-medium text-primary">
+        <p className="text-primary text-sm font-medium">
           {story.course}, {story.university}
         </p>
       </CardHeader>
       <CardContent>
-        <p className="text-sm leading-6 text-muted-foreground">{story.quote}</p>
-        <p className="mt-5 border-t pt-4 text-xs font-bold uppercase tracking-wide text-primary">
+        <p className="text-muted-foreground text-sm leading-6">{story.quote}</p>
+        <p className="text-primary mt-5 border-t pt-4 text-xs font-bold tracking-wide uppercase">
           {story.intake}
         </p>
       </CardContent>

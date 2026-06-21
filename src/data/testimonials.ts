@@ -8,7 +8,6 @@ export const testimonials = [
   {
     name: "Student feedback",
     role: "UK application applicant",
-    quote:
-      "The document checklist and timeline made the process easier to follow from Nepal.",
+    quote: "The document checklist and timeline made the process easier to follow from Nepal.",
   },
 ];

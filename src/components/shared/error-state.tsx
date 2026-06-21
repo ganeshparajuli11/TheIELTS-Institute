@@ -8,10 +8,10 @@ export function ErrorState({
   description?: string;
 }) {
   return (
-    <div className="rounded-lg border border-destructive/25 bg-destructive/5 p-6">
-      <AlertTriangle className="size-5 text-destructive" />
+    <div className="border-destructive/25 bg-destructive/5 rounded-lg border p-6">
+      <AlertTriangle className="text-destructive size-5" />
       <h2 className="mt-3 font-semibold">{title}</h2>
-      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
+      <p className="text-muted-foreground mt-2 text-sm">{description}</p>
     </div>
   );
 }

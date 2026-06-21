@@ -62,7 +62,7 @@ export default function AdminStaffPage() {
           icon={Users}
         />
       ) : (
-        <div className="rounded-lg border border-border bg-card">
+        <div className="border-border bg-card rounded-lg border">
           <Table>
             <TableHeader>
               <TableRow>
@@ -79,19 +79,19 @@ export default function AdminStaffPage() {
                 <TableRow key={member.id}>
                   <TableCell className="pl-5">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                        <span className="text-xs font-semibold text-primary">
+                      <div className="bg-primary/10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full">
+                        <span className="text-primary text-xs font-semibold">
                           {member.name.charAt(0)}
                         </span>
                       </div>
                       <div>
                         <p className="text-sm font-medium">{member.name}</p>
-                        <p className="text-xs text-muted-foreground">{member.email}</p>
+                        <p className="text-muted-foreground text-xs">{member.email}</p>
                       </div>
                     </div>
                   </TableCell>
                   <TableCell className="hidden sm:table-cell">
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-muted-foreground text-sm">
                       {member.role === "SUPER_ADMIN" ? "Super Admin" : "Admin"}
                     </span>
                   </TableCell>
@@ -99,12 +99,12 @@ export default function AdminStaffPage() {
                     <AdminStatusBadge status={member.status} />
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {formatDate(member.lastLoginAt)}
                     </span>
                   </TableCell>
                   <TableCell className="hidden lg:table-cell">
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {formatDate(member.createdAt)}
                     </span>
                   </TableCell>
@@ -141,8 +141,8 @@ export default function AdminStaffPage() {
               ))}
             </TableBody>
           </Table>
-          <div className="border-t border-border px-5 py-3">
-            <p className="text-xs text-muted-foreground">{staff.length} staff members</p>
+          <div className="border-border border-t px-5 py-3">
+            <p className="text-muted-foreground text-xs">{staff.length} staff members</p>
           </div>
         </div>
       )}

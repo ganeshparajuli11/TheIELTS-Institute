@@ -18,10 +18,7 @@ export function ok<T = null>(data?: T, message?: string): Response {
 }
 
 export function created<T = null>(data?: T, message?: string): Response {
-  return Response.json(
-    { success: true, data, message } satisfies ApiSuccess<T>,
-    { status: 201 },
-  );
+  return Response.json({ success: true, data, message } satisfies ApiSuccess<T>, { status: 201 });
 }
 
 export function badRequest(errors?: Record<string, string[]>): Response {

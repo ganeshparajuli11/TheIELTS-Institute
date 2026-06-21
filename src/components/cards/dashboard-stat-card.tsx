@@ -12,13 +12,11 @@ export function DashboardStatCard({
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="text-sm font-medium text-muted-foreground">
-          {label}
-        </CardTitle>
+        <CardTitle className="text-muted-foreground text-sm font-medium">{label}</CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-3xl font-semibold">{value}</p>
-        <p className="mt-2 text-xs text-muted-foreground">{hint}</p>
+        <p className="text-muted-foreground mt-2 text-xs">{hint}</p>
       </CardContent>
     </Card>
   );

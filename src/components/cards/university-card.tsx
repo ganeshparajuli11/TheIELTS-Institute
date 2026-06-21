@@ -5,8 +5,8 @@ import { type University } from "@/data/universities";
 
 export function UniversityCard({ university }: { university: University }) {
   return (
-    <Card className="group overflow-hidden rounded-lg border-border/80 bg-white transition hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10">
-      <div className="relative aspect-[16/9] bg-muted">
+    <Card className="group border-border/80 hover:border-primary hover:shadow-primary/10 overflow-hidden rounded-lg bg-white transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="bg-muted relative aspect-[16/9]">
         <Image
           src={university.image}
           alt={`${university.name} campus visual`}
@@ -16,9 +16,7 @@ export function UniversityCard({ university }: { university: University }) {
       </div>
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
-          <CardTitle className="text-2xl leading-tight">
-            {university.name}
-          </CardTitle>
+          <CardTitle className="text-2xl leading-tight">{university.name}</CardTitle>
           {university.featured ? (
             <Badge className="rounded-lg bg-[--badge-soft] text-[--badge-soft-fg] hover:bg-[--badge-soft-hover]">
               Featured
@@ -26,25 +24,19 @@ export function UniversityCard({ university }: { university: University }) {
           ) : null}
         </div>
       </CardHeader>
-      <CardContent className="space-y-4 text-sm text-muted-foreground">
-        <p className="font-semibold text-primary">
+      <CardContent className="text-muted-foreground space-y-4 text-sm">
+        <p className="text-primary font-semibold">
           {university.city}, {university.region}
         </p>
         <p className="leading-6">{university.shortDescription}</p>
         <div className="flex flex-wrap gap-2">
           {university.popularCourses.slice(0, 3).map((course) => (
-            <Badge
-              key={course}
-              variant="secondary"
-              className="rounded-lg px-3 py-1"
-            >
+            <Badge key={course} variant="secondary" className="rounded-lg px-3 py-1">
               {course}
             </Badge>
           ))}
         </div>
-        <p className="border-t pt-4 font-bold text-primary">
-          Intake: {university.intake}
-        </p>
+        <p className="text-primary border-t pt-4 font-bold">Intake: {university.intake}</p>
       </CardContent>
     </Card>
   );

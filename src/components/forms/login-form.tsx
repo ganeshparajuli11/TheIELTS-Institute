@@ -46,12 +46,7 @@ export function LoginForm() {
             <FormItem>
               <FormLabel>Email address</FormLabel>
               <FormControl>
-                <Input
-                  type="email"
-                  placeholder="you@example.com"
-                  autoComplete="email"
-                  {...field}
-                />
+                <Input type="email" placeholder="you@example.com" autoComplete="email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -75,11 +70,7 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          className="mt-1 w-full"
-          disabled={form.formState.isSubmitting}
-        >
+        <Button type="submit" className="mt-1 w-full" disabled={form.formState.isSubmitting}>
           {form.formState.isSubmitting ? "Signing in…" : "Sign in"}
         </Button>
       </form>

@@ -1,0 +1,7 @@
+.next/
+node_modules/
+src/generated/
+pnpm-lock.yaml
+# Content JSON files are managed by the admin panel via fs.writeFileSync
+src/content/
+public/

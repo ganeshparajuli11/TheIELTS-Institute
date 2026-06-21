@@ -83,23 +83,12 @@ export function CounsellingForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="premium-card grid gap-5 p-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="premium-card grid gap-5 p-6">
         <div className="grid gap-5 md:grid-cols-2">
-          <TextField
-            name="name"
-            label="Full name"
-            placeholder="Your full name"
-          />
+          <TextField name="name" label="Full name" placeholder="Your full name" />
           <TextField name="phone" label="Phone number" placeholder="+977" />
           <TextField name="email" label="Email" placeholder="you@example.com" />
-          <TextField
-            name="location"
-            label="Current location"
-            placeholder="Kathmandu, Nepal"
-          />
+          <TextField name="location" label="Current location" placeholder="Kathmandu, Nepal" />
           <TextField
             name="preferredCourse"
             label="Preferred course"
@@ -128,12 +117,7 @@ export function CounsellingForm() {
             name="englishStatus"
             label="IELTS/PTE status"
             placeholder="Select status"
-            options={[
-              "Not started",
-              "Preparing",
-              "Test booked",
-              "Score received",
-            ]}
+            options={["Not started", "Preparing", "Test booked", "Score received"]}
           />
         </div>
         <FormField
@@ -143,10 +127,7 @@ export function CounsellingForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Tell us about your UK study plans"
-                  {...field}
-                />
+                <Textarea placeholder="Tell us about your UK study plans" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -160,15 +141,11 @@ export function CounsellingForm() {
               <FormControl>
                 <Checkbox
                   checked={field.value}
-                  onCheckedChange={(checked) =>
-                    field.onChange(Boolean(checked))
-                  }
+                  onCheckedChange={(checked) => field.onChange(Boolean(checked))}
                 />
               </FormControl>
               <div>
-                <FormLabel>
-                  I consent to being contacted about UK study counselling.
-                </FormLabel>
+                <FormLabel>I consent to being contacted about UK study counselling.</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>
@@ -196,11 +173,7 @@ export function CounsellingForm() {
           <FormItem>
             <FormLabel>{label}</FormLabel>
             <FormControl>
-              <Input
-                placeholder={placeholder}
-                {...field}
-                value={String(field.value ?? "")}
-              />
+              <Input placeholder={placeholder} {...field} value={String(field.value ?? "")} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -227,10 +200,7 @@ export function CounsellingForm() {
         render={({ field }) => (
           <FormItem>
             <FormLabel>{label}</FormLabel>
-            <Select
-              value={String(field.value ?? "")}
-              onValueChange={field.onChange}
-            >
+            <Select value={String(field.value ?? "")} onValueChange={field.onChange}>
               <FormControl>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder={placeholder} />

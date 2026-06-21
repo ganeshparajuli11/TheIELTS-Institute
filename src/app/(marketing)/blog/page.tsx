@@ -22,11 +22,7 @@ export const metadata: Metadata = createMetadata({
   description:
     "Read UK study resources for students in Nepal, including application planning, IELTS preparation, intakes, and document guidance.",
   path: "/blog",
-  keywords: [
-    "Study in UK from Nepal",
-    "IELTS preparation Nepal",
-    "UK study resources Nepal",
-  ],
+  keywords: ["Study in UK from Nepal", "IELTS preparation Nepal", "UK study resources Nepal"],
 });
 
 const categories = [
@@ -52,7 +48,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary text-white">
+      <section className="bg-primary relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <Image
             src="/images/stitch-hero.jpg"
@@ -61,8 +57,8 @@ export default function BlogPage() {
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-primary/55 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/10" />
+          <div className="bg-primary/55 absolute inset-0 mix-blend-multiply" />
+          <div className="from-primary via-primary/80 to-primary/10 absolute inset-0 bg-gradient-to-r" />
         </div>
 
         <div className="container-page relative z-10 grid min-h-[calc(82vh-4.5rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr]">
@@ -70,13 +66,12 @@ export default function BlogPage() {
             <p className="label-caps inline-flex rounded-lg bg-white/20 px-3 py-1 text-white backdrop-blur-md">
               UK study resources
             </p>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-4xl leading-tight font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               Clear guidance for students planning the UK from Nepal
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
-              Read practical resources on applications, IELTS preparation,
-              intakes, document planning, and university selection before your
-              counselling session.
+              Read practical resources on applications, IELTS preparation, intakes, document
+              planning, and university selection before your counselling session.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -95,7 +90,7 @@ export default function BlogPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-white/25 bg-white/95 p-6 text-foreground shadow-2xl shadow-primary/30 backdrop-blur">
+          <div className="text-foreground shadow-primary/30 rounded-xl border border-white/25 bg-white/95 p-6 shadow-2xl backdrop-blur">
             <p className="label-caps text-primary">Resource focus</p>
             <h2 className="mt-3 text-2xl font-bold">
               Search-friendly content students can actually use.
@@ -104,12 +99,12 @@ export default function BlogPage() {
               {categories.map((category) => (
                 <div
                   key={category.title}
-                  className="flex items-start gap-3 rounded-lg bg-muted p-4"
+                  className="bg-muted flex items-start gap-3 rounded-lg p-4"
                 >
-                  <category.icon className="mt-0.5 size-5 shrink-0 text-primary" />
+                  <category.icon className="text-primary mt-0.5 size-5 shrink-0" />
                   <div>
-                    <p className="font-bold text-foreground">{category.title}</p>
-                    <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                    <p className="text-foreground font-bold">{category.title}</p>
+                    <p className="text-muted-foreground mt-1 text-sm leading-6">
                       {category.description}
                     </p>
                   </div>
@@ -127,14 +122,13 @@ export default function BlogPage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               Start with a clear UK application plan
             </h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              The blog is structured for future CMS publishing, but the public
-              experience should already feel useful, credible, and focused on
-              student decisions.
+            <p className="text-muted-foreground mt-5 text-lg leading-8">
+              The blog is structured for future CMS publishing, but the public experience should
+              already feel useful, credible, and focused on student decisions.
             </p>
           </div>
 
-          <Card className="rounded-lg border-primary/30 bg-white p-2 shadow-xl shadow-primary/10">
+          <Card className="border-primary/30 shadow-primary/10 rounded-lg bg-white p-2 shadow-xl">
             <CardHeader>
               <Badge
                 className={cn(
@@ -144,17 +138,13 @@ export default function BlogPage() {
               >
                 {featured.category}
               </Badge>
-              <CardTitle className="text-3xl leading-tight">
-                {featured.title}
-              </CardTitle>
+              <CardTitle className="text-3xl leading-tight">{featured.title}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg leading-8 text-muted-foreground">
-                {featured.excerpt}
-              </p>
+              <p className="text-muted-foreground text-lg leading-8">{featured.excerpt}</p>
               <Link
                 href={featured.href}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-bold"
               >
                 Read guide
                 <ArrowRight className="size-4" />
@@ -172,14 +162,14 @@ export default function BlogPage() {
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
                 Practical resources for each decision point
               </h2>
-              <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                Article records are centralized and ready to map to CMS models
-                with categories, SEO settings, and publishing status later.
+              <p className="text-muted-foreground mt-4 text-lg leading-8">
+                Article records are centralized and ready to map to CMS models with categories, SEO
+                settings, and publishing status later.
               </p>
             </div>
             <div className="premium-card flex items-center gap-3 p-4">
-              <Search className="size-5 shrink-0 text-primary" />
-              <p className="text-sm font-semibold text-muted-foreground">
+              <Search className="text-primary size-5 shrink-0" />
+              <p className="text-muted-foreground text-sm font-semibold">
                 Search and filtering can connect here when CMS content is live.
               </p>
             </div>
@@ -189,26 +179,19 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Card
                 key={post.title}
-                className="rounded-lg border-border/80 bg-white transition hover:-translate-y-1 hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+                className="border-border/80 hover:border-primary hover:shadow-primary/10 rounded-lg bg-white transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <CardHeader>
-                  <Badge
-                    variant="secondary"
-                    className="w-fit rounded-lg px-3 py-1"
-                  >
+                  <Badge variant="secondary" className="w-fit rounded-lg px-3 py-1">
                     {post.category}
                   </Badge>
-                  <CardTitle className="text-2xl leading-tight">
-                    {post.title}
-                  </CardTitle>
+                  <CardTitle className="text-2xl leading-tight">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm leading-6 text-muted-foreground">
-                    {post.excerpt}
-                  </p>
+                  <p className="text-muted-foreground text-sm leading-6">{post.excerpt}</p>
                   <Link
                     href={post.href}
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                    className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-bold"
                   >
                     Read article
                     <ArrowRight className="size-4" />
@@ -230,19 +213,19 @@ export default function BlogPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="premium-card p-6">
-              <GraduationCap className="size-9 text-primary" />
+              <GraduationCap className="text-primary size-9" />
               <h3 className="mt-5 text-xl font-bold">Academic planning</h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                Course selection, university shortlisting, entry requirements,
-                and student profile preparation.
+              <p className="text-muted-foreground mt-3 leading-7">
+                Course selection, university shortlisting, entry requirements, and student profile
+                preparation.
               </p>
             </div>
             <div className="premium-card p-6">
-              <FileText className="size-9 text-primary" />
+              <FileText className="text-primary size-9" />
               <h3 className="mt-5 text-xl font-bold">Document guidance</h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                SOP direction, financial preparation, visa document guidance,
-                and pre-departure checklists.
+              <p className="text-muted-foreground mt-3 leading-7">
+                SOP direction, financial preparation, visa document guidance, and pre-departure
+                checklists.
               </p>
             </div>
           </div>

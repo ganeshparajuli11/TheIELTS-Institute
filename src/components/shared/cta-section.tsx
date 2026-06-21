@@ -15,11 +15,11 @@ export function CtaSection({
 }: CtaSectionProps) {
   return (
     <section className="container-page pb-20">
-      <div className="relative overflow-hidden rounded-xl bg-primary p-10 text-center text-primary-foreground md:p-20">
-        <div className="absolute inset-0 academic-grid opacity-20" />
+      <div className="bg-primary text-primary-foreground relative overflow-hidden rounded-xl p-10 text-center md:p-20">
+        <div className="academic-grid absolute inset-0 opacity-20" />
         <div className="relative mx-auto max-w-3xl">
           <p className="label-caps text-white/70">Counselling CTA</p>
-          <h2 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-balance md:text-5xl">
+          <h2 className="mt-4 text-4xl leading-tight font-extrabold tracking-tight text-balance md:text-5xl">
             {title}
           </h2>
           <p className="mt-6 text-lg leading-8 text-white/85">{description}</p>

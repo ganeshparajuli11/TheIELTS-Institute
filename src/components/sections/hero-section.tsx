@@ -15,8 +15,8 @@ export function HeroSection() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-primary/45 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/55 to-transparent" />
+        <div className="bg-primary/45 absolute inset-0 mix-blend-multiply" />
+        <div className="from-primary/90 via-primary/55 absolute inset-0 bg-gradient-to-r to-transparent" />
       </div>
 
       <div className="container-page relative z-10 py-24">
@@ -24,16 +24,15 @@ export function HeroSection() {
           <span className="label-caps inline-block rounded-lg bg-white/20 px-3 py-1 text-white backdrop-blur-md">
             Established 2008
           </span>
-          <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl leading-tight font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
             Your Gateway to the UK&apos;s{" "}
             <span className="text-[--hero-highlight] underline decoration-2 underline-offset-8">
               Elite Universities
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
-            Expert IELTS coaching and comprehensive consultancy services in the
-            heart of Bagbazar. Your journey to academic excellence starts with
-            professional guidance.
+            Expert IELTS coaching and comprehensive consultancy services in the heart of Bagbazar.
+            Your journey to academic excellence starts with professional guidance.
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link

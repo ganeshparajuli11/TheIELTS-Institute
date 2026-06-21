@@ -1,11 +1,6 @@
 import "server-only";
 import { type NextRequest } from "next/server";
-import {
-  badRequest,
-  created,
-  serverError,
-  tooManyRequests,
-} from "@/lib/api-response";
+import { badRequest, created, serverError, tooManyRequests } from "@/lib/api-response";
 import { createAuditLog, getClientIp } from "@/lib/audit";
 import { db } from "@/lib/db";
 import { checkRateLimit, RATE_LIMITS } from "@/lib/rate-limit";
@@ -14,10 +9,7 @@ import { counsellingSchema } from "@/lib/validators/counselling";
 export async function POST(request: NextRequest) {
   const ip = getClientIp(request) ?? "unknown";
 
-  const { allowed } = checkRateLimit(
-    `counselling:${ip}`,
-    RATE_LIMITS.counsellingForm,
-  );
+  const { allowed } = checkRateLimit(`counselling:${ip}`, RATE_LIMITS.counsellingForm);
   if (!allowed) return tooManyRequests();
 
   let body: unknown;
@@ -29,9 +21,7 @@ export async function POST(request: NextRequest) {
 
   const parsed = counsellingSchema.safeParse(body);
   if (!parsed.success) {
-    return badRequest(
-      parsed.error.flatten().fieldErrors as Record<string, string[]>,
-    );
+    return badRequest(parsed.error.flatten().fieldErrors as Record<string, string[]>);
   }
 
   const {
@@ -80,10 +70,7 @@ export async function POST(request: NextRequest) {
       userAgent: request.headers.get("user-agent") ?? undefined,
     });
 
-    return created(
-      null,
-      "Your counselling request has been received. We will be in touch soon.",
-    );
+    return created(null, "Your counselling request has been received. We will be in touch soon.");
   } catch (err) {
     console.error("[api/counselling] Database error:", err);
     return serverError();

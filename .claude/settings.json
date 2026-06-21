@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm lint *)"
+      "Bash(pnpm lint *)",
+      "PowerShell(cd \"d:\\\\coding\\\\TheIeltsInsititue\"; pnpm lint; echo \"Exit code: $LASTEXITCODE\")",
+      "PowerShell(cd \"d:\\\\coding\\\\TheIeltsInsititue\"; pnpm lint; echo \"Exit: $LASTEXITCODE\")"
     ]
   }
 }

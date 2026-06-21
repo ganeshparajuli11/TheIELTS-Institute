@@ -50,13 +50,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -left-8 -top-8 size-40 rounded-full bg-primary/10 blur-3xl" />
+            <div className="bg-primary/10 absolute -top-8 -left-8 size-40 rounded-full blur-3xl" />
             <Image
               src="/images/stitch-students.jpg"
               alt="Students walking across a UK university campus"
               width={900}
               height={600}
-              className="relative z-10 rounded-lg border border-border shadow-2xl"
+              className="border-border relative z-10 rounded-lg border shadow-2xl"
             />
           </div>
         </div>
@@ -82,12 +82,12 @@ function HomeReason({
 }) {
   return (
     <div className="flex gap-6">
-      <div className="flex size-12 shrink-0 items-center justify-center rounded bg-icon-bg text-primary">
+      <div className="bg-icon-bg text-primary flex size-12 shrink-0 items-center justify-center rounded">
         <Icon className="size-6" />
       </div>
       <div>
         <h3 className="text-lg font-bold">{title}</h3>
-        <p className="mt-2 leading-7 text-muted-foreground">{description}</p>
+        <p className="text-muted-foreground mt-2 leading-7">{description}</p>
       </div>
     </div>
   );

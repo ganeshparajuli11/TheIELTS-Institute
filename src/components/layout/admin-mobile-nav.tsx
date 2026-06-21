@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -32,16 +33,20 @@ export function AdminMobileNav() {
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="left" className="w-72 p-0">
-          <SheetHeader className="flex h-16 flex-row items-center border-b border-border px-6">
-            <SheetTitle asChild>
+          <SheetHeader className="border-border flex h-16 flex-row items-center border-b px-6">
+            <SheetTitle>
               <Link
                 href="/admin"
                 className="flex items-center gap-2.5"
                 onClick={() => setOpen(false)}
               >
-                <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
-                  <span className="text-xs font-bold text-primary-foreground">TI</span>
-                </div>
+                <Image
+                  src="/logo.jpg"
+                  alt="The IELTS Institute"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 rounded-md bg-white object-contain"
+                />
                 <span className="text-sm font-semibold tracking-tight">IELTS Admin</span>
               </Link>
             </SheetTitle>
@@ -59,7 +64,7 @@ export function AdminMobileNav() {
           <nav className="overflow-y-auto px-3 py-4">
             {adminNavGroups.map((group) => (
               <div key={group.label} className="mb-5">
-                <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+                <p className="text-muted-foreground/60 mb-1 px-3 text-[10px] font-semibold tracking-widest uppercase">
                   {group.label}
                 </p>
                 <ul className="grid gap-0.5">
@@ -78,7 +83,10 @@ export function AdminMobileNav() {
                               : "text-muted-foreground hover:bg-muted hover:text-foreground",
                           )}
                         >
-                          <Icon className={cn("h-4 w-4 shrink-0", active ? "text-primary" : "")} aria-hidden="true" />
+                          <Icon
+                            className={cn("h-4 w-4 shrink-0", active ? "text-primary" : "")}
+                            aria-hidden="true"
+                          />
                           {item.label}
                         </Link>
                       </li>

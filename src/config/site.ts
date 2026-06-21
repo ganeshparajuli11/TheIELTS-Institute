@@ -1,3 +1,6 @@
+// Static site config — used by client components (site-header) and SEO utilities.
+// Updated via /admin/settings which writes to src/content/site-config.json.
+// Client-boundary imports must stay static; server-only pages read JSON directly.
 export const siteConfig = {
   name: "The IELTS Institute",
   url: "https://example.com",

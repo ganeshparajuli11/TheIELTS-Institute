@@ -57,7 +57,7 @@ const featuredServices = services.slice(0, 4);
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary text-white">
+      <section className="bg-primary relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <Image
             src="/images/stitch-hero.jpg"
@@ -66,8 +66,8 @@ export default function ServicesPage() {
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-primary/55 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/10" />
+          <div className="bg-primary/55 absolute inset-0 mix-blend-multiply" />
+          <div className="from-primary via-primary/80 to-primary/10 absolute inset-0 bg-gradient-to-r" />
         </div>
 
         <div className="container-page relative z-10 grid min-h-[calc(88vh-4.5rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr]">
@@ -75,13 +75,13 @@ export default function ServicesPage() {
             <p className="label-caps inline-flex rounded-lg bg-white/20 px-3 py-1 text-white backdrop-blur-md">
               UK study services
             </p>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-4xl leading-tight font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               Everything students need for a structured UK study plan
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
-              From counselling and university selection to IELTS planning,
-              applications, documents, and pre-departure support, every service
-              is designed to reduce confusion for students in Nepal.
+              From counselling and university selection to IELTS planning, applications, documents,
+              and pre-departure support, every service is designed to reduce confusion for students
+              in Nepal.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -100,27 +100,27 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-white/25 bg-white/95 p-6 text-foreground shadow-2xl shadow-primary/30 backdrop-blur">
+          <div className="text-foreground shadow-primary/30 rounded-xl border border-white/25 bg-white/95 p-6 shadow-2xl backdrop-blur">
             <p className="label-caps text-primary">Service promise</p>
             <h2 className="mt-3 text-2xl font-bold">
               Clear support from first enquiry to pre-departure planning.
             </h2>
             <div className="mt-6 grid gap-3">
-              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
-                <GraduationCap className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-foreground">
+              <div className="bg-muted flex items-start gap-3 rounded-lg p-4">
+                <GraduationCap className="text-primary mt-0.5 size-5 shrink-0" />
+                <span className="text-foreground font-medium">
                   UK-focused counselling and university selection
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
-                <BookOpenCheck className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-foreground">
+              <div className="bg-muted flex items-start gap-3 rounded-lg p-4">
+                <BookOpenCheck className="text-primary mt-0.5 size-5 shrink-0" />
+                <span className="text-foreground font-medium">
                   IELTS readiness and academic English direction
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
-                <BadgeCheck className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-foreground">
+              <div className="bg-muted flex items-start gap-3 rounded-lg p-4">
+                <BadgeCheck className="text-primary mt-0.5 size-5 shrink-0" />
+                <span className="text-foreground font-medium">
                   Careful visa document guidance without outcome promises
                 </span>
               </div>
@@ -134,15 +134,13 @@ export default function ServicesPage() {
           {servicePillars.map((item) => (
             <article
               key={item.title}
-              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="border-border hover:border-primary hover:shadow-primary/10 rounded-lg border bg-white p-6 transition hover:shadow-xl"
             >
-              <div className="flex size-14 items-center justify-center rounded-lg bg-icon-bg text-primary">
+              <div className="bg-icon-bg text-primary flex size-14 items-center justify-center rounded-lg">
                 <item.icon className="size-7" />
               </div>
               <h2 className="mt-5 text-2xl font-bold">{item.title}</h2>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                {item.description}
-              </p>
+              <p className="text-muted-foreground mt-3 leading-7">{item.description}</p>
             </article>
           ))}
         </div>
@@ -155,9 +153,9 @@ export default function ServicesPage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               Choose the support your UK study journey needs
             </h2>
-            <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              These service records are ready for future admin management while
-              keeping the public page polished, trustworthy, and easy to scan.
+            <p className="text-muted-foreground mt-4 text-lg leading-8">
+              These service records are ready for future admin management while keeping the public
+              page polished, trustworthy, and easy to scan.
             </p>
           </div>
 
@@ -176,11 +174,10 @@ export default function ServicesPage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               A service system built around student confidence
             </h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Instead of repeating the full application roadmap here, this page
-              explains the service areas. The detailed student journey now
-              belongs on the Study in UK page where it has the strongest
-              context.
+            <p className="text-muted-foreground mt-5 text-lg leading-8">
+              Instead of repeating the full application roadmap here, this page explains the service
+              areas. The detailed student journey now belongs on the Study in UK page where it has
+              the strongest context.
             </p>
           </div>
 
@@ -194,15 +191,15 @@ export default function ServicesPage() {
                   className="rounded-lg border border-white/70 bg-white p-6 shadow-sm"
                 >
                   <div className="flex gap-4">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary text-lg font-extrabold text-white">
+                    <div className="bg-primary flex size-12 shrink-0 items-center justify-center rounded-lg text-lg font-extrabold text-white">
                       {index + 1}
                     </div>
                     <div>
                       <div className="flex items-center gap-3">
-                        <Icon className="size-5 text-primary" />
+                        <Icon className="text-primary size-5" />
                         <h3 className="text-xl font-bold">{service.title}</h3>
                       </div>
-                      <p className="mt-3 leading-7 text-muted-foreground">
+                      <p className="text-muted-foreground mt-3 leading-7">
                         {service.fullDescription}
                       </p>
                     </div>
@@ -224,19 +221,19 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="premium-card p-6">
-              <ShieldCheck className="size-9 text-primary" />
+              <ShieldCheck className="text-primary size-9" />
               <h3 className="mt-5 text-xl font-bold">No risky claims</h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                Visa guidance is presented as document preparation support, not
-                as an approval promise.
+              <p className="text-muted-foreground mt-3 leading-7">
+                Visa guidance is presented as document preparation support, not as an approval
+                promise.
               </p>
             </div>
             <div className="premium-card p-6">
-              <FileCheck className="size-9 text-primary" />
+              <FileCheck className="text-primary size-9" />
               <h3 className="mt-5 text-xl font-bold">CMS-ready content</h3>
-              <p className="mt-3 leading-7 text-muted-foreground">
-                Each service keeps a slug, description, icon, CTA label, and SEO
-                terms so admin records can replace static data later.
+              <p className="text-muted-foreground mt-3 leading-7">
+                Each service keeps a slug, description, icon, CTA label, and SEO terms so admin
+                records can replace static data later.
               </p>
             </div>
           </div>

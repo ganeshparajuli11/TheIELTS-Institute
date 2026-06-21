@@ -21,14 +21,14 @@ A Nepal-based education consultancy helping students apply to study in the Unite
 
 Main services:
 
-* UK study counselling
-* UK university selection
-* UK university application support
-* SOP and documentation guidance
-* Student visa application guidance
-* IELTS preparation guidance
-* Pre-departure guidance
-* Success story publishing
+- UK study counselling
+- UK university selection
+- UK university application support
+- SOP and documentation guidance
+- Student visa application guidance
+- IELTS preparation guidance
+- Pre-departure guidance
+- Success story publishing
 
 Important:
 Do not mention or promote other countries.
@@ -39,58 +39,58 @@ I have a Stitch-generated design that I like. Follow its visual direction, but d
 
 What I liked from the design:
 
-* Royal purple academic brand system
-* Premium institutional feel
-* Montserrat headings and Inter body typography
-* Clean white and soft lavender background
-* Academic grid patterns
-* UK landmark / university inspired visual feeling
-* Editorial spacing
-* Clean cards with thin borders
-* Premium consultancy feel
-* Strong CTA style
-* Professional trust-building layout
+- Royal purple academic brand system
+- Premium institutional feel
+- Montserrat headings and Inter body typography
+- Clean white and soft lavender background
+- Academic grid patterns
+- UK landmark / university inspired visual feeling
+- Editorial spacing
+- Clean cards with thin borders
+- Premium consultancy feel
+- Strong CTA style
+- Professional trust-building layout
 
 What I do not like and must be fixed:
 
-* Navbar is inconsistent between pages
-* Footer is inconsistent between pages
-* Page structure is inconsistent
-* Same content is repeated randomly on multiple pages
-* University content appears on Home, Study in UK, and Universities page without proper purpose
-* Content is hardcoded inside pages
-* Design sections do not follow one reusable system
-* Some pages feel like separate templates instead of one website
-* Some claims like “98% visa success rate” can be risky if not verified
-* Some old generated HTML uses Material Symbols and CDN style, but this project should use our installed React components and icons
+- Navbar is inconsistent between pages
+- Footer is inconsistent between pages
+- Page structure is inconsistent
+- Same content is repeated randomly on multiple pages
+- University content appears on Home, Study in UK, and Universities page without proper purpose
+- Content is hardcoded inside pages
+- Design sections do not follow one reusable system
+- Some pages feel like separate templates instead of one website
+- Some claims like “98% visa success rate” can be risky if not verified
+- Some old generated HTML uses Material Symbols and CDN style, but this project should use our installed React components and icons
 
 Use the current project stack:
 
-* Next.js App Router
-* TypeScript
-* Tailwind CSS
-* shadcn/ui components
-* Motion for React
-* Lucide React icons
-* React Hook Form
-* Zod
-* next/font
-* Next/Image
-* Sonner if needed for frontend-only form feedback
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- Motion for React
+- Lucide React icons
+- React Hook Form
+- Zod
+- next/font
+- Next/Image
+- Sonner if needed for frontend-only form feedback
 
 Do not use:
 
-* Material Symbols
-* CDN Tailwind
-* Google Fonts via link tag
-* Inline tailwind config inside components
-* Random icon libraries
-* Heavy animation libraries
-* Lottie
-* Three.js
-* Canvas particles
-* Video backgrounds
-* Hardcoded repeated page content
+- Material Symbols
+- CDN Tailwind
+- Google Fonts via link tag
+- Inline tailwind config inside components
+- Random icon libraries
+- Heavy animation libraries
+- Lottie
+- Three.js
+- Canvas particles
+- Video backgrounds
+- Hardcoded repeated page content
 
 Main goal:
 Create a consistent, premium, SEO-friendly frontend design system and page structure where all reusable content comes from a shared content bank.
@@ -102,67 +102,67 @@ Create or update these content/config files:
 
 src/config/site.ts
 
-* business name
-* short description
-* full description
-* location
-* phone placeholder
-* email placeholder
-* address placeholder
-* social links placeholder
-* main CTA
-* secondary CTA
-* SEO default metadata
-* brand tagline
-* legal/compliance note
+- business name
+- short description
+- full description
+- location
+- phone placeholder
+- email placeholder
+- address placeholder
+- social links placeholder
+- main CTA
+- secondary CTA
+- SEO default metadata
+- brand tagline
+- legal/compliance note
 
 src/config/navigation.ts
 
-* main public navigation
-* footer navigation
-* admin navigation placeholder
-* CTA route
-* active route structure
+- main public navigation
+- footer navigation
+- admin navigation placeholder
+- CTA route
+- active route structure
 
 src/data/services.ts
 
-* all service data
-* service title
-* slug
-* short description
-* full description
-* icon name using Lucide icons
-* CTA label
-* SEO keywords
+- all service data
+- service title
+- slug
+- short description
+- full description
+- icon name using Lucide icons
+- CTA label
+- SEO keywords
 
 src/data/universities.ts
 
-* placeholder UK university data
-* name
-* city
-* region
-* popular courses
-* intake
-* short description
-* image placeholder
-* featured flag
-* slug
+- placeholder UK university data
+- name
+- city
+- region
+- popular courses
+- intake
+- short description
+- image placeholder
+- featured flag
+- slug
 
 src/data/success-stories.ts
 
-* placeholder success stories
-* student name
-* university
-* course
-* intake
-* image placeholder
-* quote
-* status/published flag
+- placeholder success stories
+- student name
+- university
+- course
+- intake
+- image placeholder
+- quote
+- status/published flag
 
 src/data/faqs.ts
 
-* shared FAQs
-* page-specific FAQ groups:
+- shared FAQs
+- page-specific FAQ groups:
   home
   studyInUk
   services
@@ -171,22 +171,22 @@ src/data/faqs.ts
 
 src/data/process.ts
 
-* UK study process steps
-* step title
-* description
-* icon
-* CTA if needed
+- UK study process steps
+- step title
+- description
+- icon
+- CTA if needed
 
 src/data/testimonials.ts
 
-* testimonial data if separate from success stories
+- testimonial data if separate from success stories
 
 src/data/stats.ts
 
-* trust indicators
-* important: use safe placeholder wording only
-* do not use unverified visa success percentages
-* use ethical alternatives like “student-focused guidance”, “UK-focused support”, “application preparation assistance”, “experienced counselling team”
+- trust indicators
+- important: use safe placeholder wording only
+- do not use unverified visa success percentages
+- use ethical alternatives like “student-focused guidance”, “UK-focused support”, “application preparation assistance”, “experienced counselling team”
 
 Important content bank rule:
 Pages should import data from these files instead of hardcoding repeated content.
@@ -304,38 +304,38 @@ Update globals.css and design tokens properly.
 
 Use the brand direction:
 
-* Primary: Royal Purple
-* Secondary: Deep Indigo
-* Accent: Soft lavender / soft violet
-* Background: white and soft lavender
-* Text: near-black / slate
-* Borders: low-contrast lavender/slate
-* Cards: white with thin border and subtle shadow
-* Section backgrounds: alternate white / soft lavender / deep purple
-* Shape: slightly rounded, professional, not overly pill-shaped
+- Primary: Royal Purple
+- Secondary: Deep Indigo
+- Accent: Soft lavender / soft violet
+- Background: white and soft lavender
+- Text: near-black / slate
+- Borders: low-contrast lavender/slate
+- Cards: white with thin border and subtle shadow
+- Section backgrounds: alternate white / soft lavender / deep purple
+- Shape: slightly rounded, professional, not overly pill-shaped
 
 Typography:
 Use next/font.
 Use a professional heading/body setup:
 
-* Headings: Montserrat-style or suitable next/font equivalent if already configured
-* Body: Inter-style or suitable next/font equivalent
-* Use strong H1/H2 hierarchy
-* Use label caps for small section labels
-* Do not import fonts through external CSS links
+- Headings: Montserrat-style or suitable next/font equivalent if already configured
+- Body: Inter-style or suitable next/font equivalent
+- Use strong H1/H2 hierarchy
+- Use label caps for small section labels
+- Do not import fonts through external CSS links
 
 Layout rules:
 
-* Create one consistent container class
-* Create one consistent section spacing system
-* Create one consistent heading system
-* Create one consistent card style
-* Create one consistent button hierarchy
-* Create one consistent navbar
-* Create one consistent footer
-* Use one mobile navigation pattern
-* Use one active nav state pattern
-* Use one CTA style across the website
+- Create one consistent container class
+- Create one consistent section spacing system
+- Create one consistent heading system
+- Create one consistent card style
+- Create one consistent button hierarchy
+- Create one consistent navbar
+- Create one consistent footer
+- Use one mobile navigation pattern
+- Use one active nav state pattern
+- Use one CTA style across the website
 
 Components to use/create:
 src/components/layout/site-header.tsx
@@ -371,12 +371,12 @@ Animation rules:
 Use Motion, but keep it lightweight.
 Use animation only for:
 
-* hero entrance
-* section reveal
-* card hover
-* FAQ open/close
-* mobile menu
-* CTA hover
+- hero entrance
+- section reveal
+- card hover
+- FAQ open/close
+- mobile menu
+- CTA hover
 
 Do not animate every small item aggressively.
 Use opacity and transform only.
@@ -391,27 +391,27 @@ Create reusable helper in src/lib/seo.ts if needed.
 
 Each page should have:
 
-* SEO title
-* SEO description
-* page-specific keywords
-* OpenGraph metadata
-* proper H1
-* proper H2/H3 structure
-* semantic sections
-* internal links
-* image alt text
-* FAQ structure where relevant
+- SEO title
+- SEO description
+- page-specific keywords
+- OpenGraph metadata
+- proper H1
+- proper H2/H3 structure
+- semantic sections
+- internal links
+- image alt text
+- FAQ structure where relevant
 
 Target SEO keywords:
 
-* UK education consultancy in Nepal
-* Study in UK from Nepal
-* UK university application from Nepal
-* UK student visa guidance Nepal
-* IELTS preparation Nepal
-* UK study counselling Nepal
-* The IELTS Institute Nepal
-* Free UK study counselling Nepal
+- UK education consultancy in Nepal
+- Study in UK from Nepal
+- UK university application from Nepal
+- UK student visa guidance Nepal
+- IELTS preparation Nepal
+- UK study counselling Nepal
+- The IELTS Institute Nepal
+- Free UK study counselling Nepal
 
 Compliance rules:
 Do not promise guaranteed visa approval.
@@ -419,12 +419,12 @@ Do not write “guaranteed visa”, “100% success”, or fake success rates.
 Do not write misleading immigration claims.
 Use safe wording:
 
-* visa guidance
-* document preparation support
-* application assistance
-* counselling
-* study roadmap
-* student support
+- visa guidance
+- document preparation support
+- application assistance
+- counselling
+- study roadmap
+- student support
 
 Design improvement goal:
 Use the Stitch design as inspiration, but rebuild it properly as a real Next.js design system.
@@ -432,18 +432,18 @@ The final website should feel like one premium brand, not multiple disconnected 
 
 Important consistency rules:
 
-* Same navbar on every public page
-* Same footer on every public page
-* Same active nav logic
-* Same CTA text hierarchy
-* Same design tokens
-* Same card components
-* Same spacing scale
-* Same icons style
-* Same typography scale
-* Same content source
-* Same page hero pattern
-* Same SEO metadata pattern
+- Same navbar on every public page
+- Same footer on every public page
+- Same active nav logic
+- Same CTA text hierarchy
+- Same design tokens
+- Same card components
+- Same spacing scale
+- Same icons style
+- Same typography scale
+- Same content source
+- Same page hero pattern
+- Same SEO metadata pattern
 
 Route structure:
 Keep the existing route structure.
@@ -476,14 +476,14 @@ The footer should not be different per page.
 Create one SiteFooter component using site config + navigation config.
 Footer should include:
 
-* logo/name
-* short description
-* services links
-* quick links
-* contact info
-* legal links
-* disclaimer
-* copyright
+- logo/name
+- short description
+- services links
+- quick links
+- contact info
+- legal links
+- disclaimer
+- copyright
 
 Forms:
 Use existing React Hook Form + Zod setup.
@@ -494,38 +494,38 @@ Add TODO comments for future API integration.
 
 Counselling form fields:
 
-* full name
-* phone number
-* email
-* current location
-* preferred course
-* highest qualification
-* preferred intake
-* IELTS/PTE status
-* preferred UK university if any
-* message
-* consent checkbox
+- full name
+- phone number
+- email
+- current location
+- preferred course
+- highest qualification
+- preferred intake
+- IELTS/PTE status
+- preferred UK university if any
+- message
+- consent checkbox
 
 Contact form fields:
 
-* full name
-* email
-* phone
-* enquiry type
-* message
-* consent checkbox
+- full name
+- email
+- phone
+- enquiry type
+- message
+- consent checkbox
 
 Admin future-readiness:
 Since later content will be updated through admin panel, create the frontend content structure in a way that maps easily to CMS models:
 
-* Consultancy information
-* Services
-* Universities
-* Success stories
-* FAQs
-* Blog posts
-* Contact details
-* SEO settings
+- Consultancy information
+- Services
+- Universities
+- Success stories
+- FAQs
+- Blog posts
+- Contact details
+- SEO settings
 
 Do not build admin CMS now, but add clear comments where later CMS/database data will replace static content.
 
@@ -563,19 +563,19 @@ Implementation order:
 
 Code quality rules:
 
-* TypeScript strict style
-* No unnecessary any
-* Use named exports where appropriate
-* Keep components small
-* Avoid huge files
-* Avoid repeated data
-* Avoid hardcoded repeated nav/footer
-* Use @/* imports
-* Use semantic HTML
-* Use accessible buttons/forms
-* Use aria labels where needed
-* Use proper alt text
-* Keep mobile-first responsive design
+- TypeScript strict style
+- No unnecessary any
+- Use named exports where appropriate
+- Keep components small
+- Avoid huge files
+- Avoid repeated data
+- Avoid hardcoded repeated nav/footer
+- Use @/\* imports
+- Use semantic HTML
+- Use accessible buttons/forms
+- Use aria labels where needed
+- Use proper alt text
+- Keep mobile-first responsive design
 
 Final review checklist:
 Before finishing, review and fix:

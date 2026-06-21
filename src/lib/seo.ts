@@ -14,9 +14,7 @@ export function createMetadata({
   path = "/",
   keywords = [],
 }: MetadataInput = {}): Metadata {
-  const pageTitle = title.includes(siteConfig.name)
-    ? title
-    : `${title} | ${siteConfig.name}`;
+  const pageTitle = title.includes(siteConfig.name) ? title : `${title} | ${siteConfig.name}`;
   const url = new URL(path, siteConfig.url);
   const allKeywords = [...siteConfig.seo.keywords, ...keywords];
 

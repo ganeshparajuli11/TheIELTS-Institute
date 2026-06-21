@@ -1,11 +1,6 @@
 import "server-only";
 import { type NextRequest } from "next/server";
-import {
-  badRequest,
-  created,
-  serverError,
-  tooManyRequests,
-} from "@/lib/api-response";
+import { badRequest, created, serverError, tooManyRequests } from "@/lib/api-response";
 import { createAuditLog, getClientIp } from "@/lib/audit";
 import { db } from "@/lib/db";
 import { checkRateLimit, RATE_LIMITS } from "@/lib/rate-limit";
@@ -26,9 +21,7 @@ export async function POST(request: NextRequest) {
 
   const parsed = contactSchema.safeParse(body);
   if (!parsed.success) {
-    return badRequest(
-      parsed.error.flatten().fieldErrors as Record<string, string[]>,
-    );
+    return badRequest(parsed.error.flatten().fieldErrors as Record<string, string[]>);
   }
 
   const { name, email, phone, enquiryType, message } = parsed.data;

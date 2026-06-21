@@ -75,16 +75,13 @@ export default function AdminEnquiriesPage() {
       />
 
       {/* Status tabs */}
-      <Tabs
-        value={statusFilter}
-        onValueChange={(v) => setStatusFilter(v as "all" | EnquiryStatus)}
-      >
+      <Tabs value={statusFilter} onValueChange={(v) => setStatusFilter(v as "all" | EnquiryStatus)}>
         <TabsList className="h-9 flex-wrap">
           {statusTabs.map((tab) => (
             <TabsTrigger key={tab.value} value={tab.value} className="text-xs">
               {tab.label}
               {tab.value !== "all" && (
-                <span className="ml-1.5 rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium tabular-nums text-muted-foreground">
+                <span className="bg-muted text-muted-foreground ml-1.5 rounded px-1.5 py-0.5 text-[10px] font-medium tabular-nums">
                   {enquiries.filter((e) => e.status === tab.value).length}
                 </span>
               )}
@@ -141,7 +138,7 @@ export default function AdminEnquiriesPage() {
           icon={MessageSquare}
         />
       ) : (
-        <div className="rounded-lg border border-border bg-card">
+        <div className="border-border bg-card rounded-lg border">
           <Table>
             <TableHeader>
               <TableRow>
@@ -160,12 +157,12 @@ export default function AdminEnquiriesPage() {
                   <TableCell className="pl-5">
                     <div>
                       <p className="text-sm font-medium">{enquiry.fullName}</p>
-                      <p className="text-xs text-muted-foreground">{enquiry.email}</p>
-                      <p className="text-xs text-muted-foreground sm:hidden">{enquiry.phone}</p>
+                      <p className="text-muted-foreground text-xs">{enquiry.email}</p>
+                      <p className="text-muted-foreground text-xs sm:hidden">{enquiry.phone}</p>
                     </div>
                   </TableCell>
                   <TableCell className="hidden sm:table-cell">
-                    <span className="text-sm capitalize text-muted-foreground">
+                    <span className="text-muted-foreground text-sm capitalize">
                       {enquiry.enquiryType?.replace(/-/g, " ") ?? "—"}
                     </span>
                   </TableCell>
@@ -176,12 +173,12 @@ export default function AdminEnquiriesPage() {
                     <AdminStatusBadge status={enquiry.priority} />
                   </TableCell>
                   <TableCell className="hidden lg:table-cell">
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-muted-foreground text-sm">
                       {enquiry.assignedTo ?? "—"}
                     </span>
                   </TableCell>
                   <TableCell className="hidden lg:table-cell">
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-muted-foreground text-xs">
                       {new Date(enquiry.createdAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",
@@ -220,8 +217,8 @@ export default function AdminEnquiriesPage() {
               ))}
             </TableBody>
           </Table>
-          <div className="flex items-center justify-between border-t border-border px-5 py-3">
-            <p className="text-xs text-muted-foreground">
+          <div className="border-border flex items-center justify-between border-t px-5 py-3">
+            <p className="text-muted-foreground text-xs">
               Showing {filtered.length} of {enquiries.length} enquiries
             </p>
             {/* TODO: Add pagination after backend API supports cursor/page-based pagination. */}

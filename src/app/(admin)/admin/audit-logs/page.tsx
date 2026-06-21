@@ -107,7 +107,7 @@ export default function AdminAuditLogsPage() {
           icon={BarChart3}
         />
       ) : (
-        <div className="rounded-lg border border-border bg-card">
+        <div className="border-border bg-card rounded-lg border">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
@@ -124,7 +124,7 @@ export default function AdminAuditLogsPage() {
                   <TableRow key={log.id}>
                     <TableCell className="pl-5">
                       <span
-                        className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-medium ${ACTION_BADGE[log.action] ?? "bg-slate-100 text-slate-600 border-slate-200"}`}
+                        className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-medium ${ACTION_BADGE[log.action] ?? "border-slate-200 bg-slate-100 text-slate-600"}`}
                       >
                         {ACTION_LABELS[log.action] ?? log.action}
                       </span>
@@ -133,16 +133,16 @@ export default function AdminAuditLogsPage() {
                       <div>
                         <p className="text-sm">{log.userName ?? "System"}</p>
                         {log.userEmail && (
-                          <p className="text-xs text-muted-foreground">{log.userEmail}</p>
+                          <p className="text-muted-foreground text-xs">{log.userEmail}</p>
                         )}
                       </div>
                     </TableCell>
                     <TableCell className="hidden md:table-cell">
                       {log.entityType ? (
-                        <span className="text-sm text-muted-foreground">
+                        <span className="text-muted-foreground text-sm">
                           {log.entityType}{" "}
                           {log.entityId && (
-                            <code className="text-xs text-muted-foreground/60">
+                            <code className="text-muted-foreground/60 text-xs">
                               #{log.entityId.slice(-6)}
                             </code>
                           )}
@@ -152,12 +152,10 @@ export default function AdminAuditLogsPage() {
                       )}
                     </TableCell>
                     <TableCell className="hidden lg:table-cell">
-                      <code className="text-xs text-muted-foreground">
-                        {log.ipAddress ?? "—"}
-                      </code>
+                      <code className="text-muted-foreground text-xs">{log.ipAddress ?? "—"}</code>
                     </TableCell>
                     <TableCell>
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-muted-foreground text-xs">
                         {new Date(log.createdAt).toLocaleString("en-GB", {
                           day: "numeric",
                           month: "short",
@@ -172,8 +170,8 @@ export default function AdminAuditLogsPage() {
               </TableBody>
             </Table>
           </div>
-          <div className="border-t border-border px-5 py-3">
-            <p className="text-xs text-muted-foreground">
+          <div className="border-border border-t px-5 py-3">
+            <p className="text-muted-foreground text-xs">
               {filtered.length} of {logs.length} log entries
               {/* TODO: Add pagination after backend API supports cursor-based audit log pagination. */}
             </p>

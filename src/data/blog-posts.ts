@@ -1,23 +1,15 @@
-export const blogPosts = [
-  {
-    title: "How to plan your UK study application from Nepal",
-    category: "Application planning",
-    excerpt:
-      "A guide for timelines, documents, intake planning, and counselling preparation.",
-    href: "#",
-  },
-  {
-    title: "IELTS preparation habits for UK-bound students",
-    category: "IELTS guidance",
-    excerpt:
-      "A practical resource for students building English test readiness.",
-    href: "#",
-  },
-  {
-    title: "Understanding UK intakes: September, January, and May",
-    category: "Study in UK",
-    excerpt:
-      "A resource explaining intake options and how to choose the right timing.",
-    href: "#",
-  },
-];
+import { readContent } from "@/lib/content-store";
+import type { ContentBlogPost } from "@/types/content";
+
+export type BlogPost = ContentBlogPost;
+
+const allPosts = readContent<BlogPost[]>("blog-posts");
+
+export const blogPosts = allPosts
+  .filter((p) => p.status === "published")
+  .map((p) => ({
+    title: p.title,
+    category: p.category,
+    excerpt: p.excerpt,
+    href: `/blog/${p.slug}`,
+  }));

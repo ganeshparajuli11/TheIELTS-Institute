@@ -23,16 +23,14 @@ export function AdminStatCard({
       <CardContent className="p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
               {label}
             </p>
             <p className="mt-1.5 text-2xl font-semibold tabular-nums">{value}</p>
-            {description && (
-              <p className="mt-1 text-xs text-muted-foreground">{description}</p>
-            )}
+            {description && <p className="text-muted-foreground mt-1 text-xs">{description}</p>}
           </div>
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-            <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+          <div className="bg-primary/10 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg">
+            <Icon className="text-primary h-5 w-5" aria-hidden="true" />
           </div>
         </div>
       </CardContent>

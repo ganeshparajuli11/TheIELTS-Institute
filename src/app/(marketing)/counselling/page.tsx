@@ -33,7 +33,7 @@ export default function CounsellingPage() {
               title="What happens next"
               description="A clear next-step structure for your UK study planning conversation."
             />
-            <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
+            <ul className="text-muted-foreground mt-6 space-y-3 text-sm">
               {counsellingContent.nextSteps.map((step) => (
                 <li key={step}>{step}</li>
               ))}
@@ -41,7 +41,7 @@ export default function CounsellingPage() {
           </div>
           <div className="premium-card p-6">
             <h2 className="text-xl font-bold">Useful documents</h2>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <p className="text-muted-foreground mt-3 text-sm leading-6">
               {counsellingContent.usefulDocuments}
             </p>
           </div>

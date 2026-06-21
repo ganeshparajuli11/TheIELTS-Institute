@@ -1,0 +1,62 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Lint · Type · Build
+    runs-on: ubuntu-latest
+
+    env:
+      # Dummy URL so Prisma client initialisation doesn't error at build time.
+      # No real DB connection is made during build or schema validation.
+      DATABASE_URL: "postgresql://ci:ci@localhost:5432/ci_placeholder"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma client
+        run: pnpm prisma:generate
+
+      - name: Format check
+        run: pnpm format:check
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Prisma schema validation
+        run: pnpm prisma:validate
+
+      - name: Security secrets check
+        run: pnpm security:secrets
+
+      - name: Build
+        run: pnpm build
+
+      - name: Dependency audit (critical only)
+        run: pnpm audit --audit-level=critical
+        # Non-critical vulnerabilities are tracked but don't block merges.
+        # Run `pnpm security:audit` locally to see high-severity issues too.
+        continue-on-error: true

@@ -70,10 +70,7 @@ export default function AdminCoursesPage() {
           className="h-9 max-w-xs text-sm"
           aria-label="Search courses"
         />
-        <Select
-          value={levelFilter}
-          onValueChange={(v) => setLevelFilter(v as "all" | CourseLevel)}
-        >
+        <Select value={levelFilter} onValueChange={(v) => setLevelFilter(v as "all" | CourseLevel)}>
           <SelectTrigger className="h-9 w-40 text-sm" aria-label="Filter by level">
             <SelectValue placeholder="Level" />
           </SelectTrigger>
@@ -96,7 +93,7 @@ export default function AdminCoursesPage() {
           icon={GraduationCap}
         />
       ) : (
-        <div className="rounded-lg border border-border bg-card">
+        <div className="border-border bg-card rounded-lg border">
           <Table>
             <TableHeader>
               <TableRow>
@@ -114,21 +111,21 @@ export default function AdminCoursesPage() {
                 <TableRow key={course.id}>
                   <TableCell className="pl-5">
                     <p className="text-sm font-medium">{course.name}</p>
-                    <p className="text-xs text-muted-foreground sm:hidden">
+                    <p className="text-muted-foreground text-xs sm:hidden">
                       {course.universityName}
                     </p>
                   </TableCell>
                   <TableCell className="hidden sm:table-cell">
-                    <span className="text-sm text-muted-foreground">{course.universityName}</span>
+                    <span className="text-muted-foreground text-sm">{course.universityName}</span>
                   </TableCell>
                   <TableCell>
                     <AdminStatusBadge status={course.level} />
                   </TableCell>
                   <TableCell className="hidden md:table-cell">
-                    <span className="text-sm text-muted-foreground">{course.subjectArea}</span>
+                    <span className="text-muted-foreground text-sm">{course.subjectArea}</span>
                   </TableCell>
                   <TableCell className="hidden lg:table-cell">
-                    <span className="text-sm text-muted-foreground">{course.duration}</span>
+                    <span className="text-muted-foreground text-sm">{course.duration}</span>
                   </TableCell>
                   <TableCell>
                     <AdminStatusBadge status={course.published ? "PUBLISHED" : "DRAFT"} />
@@ -163,8 +160,8 @@ export default function AdminCoursesPage() {
               ))}
             </TableBody>
           </Table>
-          <div className="border-t border-border px-5 py-3">
-            <p className="text-xs text-muted-foreground">
+          <div className="border-border border-t px-5 py-3">
+            <p className="text-muted-foreground text-xs">
               {filtered.length} of {courses.length} courses
             </p>
           </div>

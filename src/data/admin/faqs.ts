@@ -52,5 +52,12 @@ export const mockFaqs = [
   },
 ];
 
-export const FAQ_PAGE_KEYS = ["home", "study-in-uk", "universities", "services", "counselling", "contact"] as const;
-export type FaqPageKey = typeof FAQ_PAGE_KEYS[number];
+export const FAQ_PAGE_KEYS = [
+  "home",
+  "study-in-uk",
+  "universities",
+  "services",
+  "counselling",
+  "contact",
+] as const;
+export type FaqPageKey = (typeof FAQ_PAGE_KEYS)[number];

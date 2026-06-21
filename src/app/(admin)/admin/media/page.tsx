@@ -20,9 +20,9 @@ export default function AdminMediaPage() {
 
       <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
         <p className="text-sm text-amber-800">
-          <strong>Not yet implemented.</strong> Media upload requires a cloud storage backend
-          (e.g., Cloudflare R2, AWS S3, or Vercel Blob). This page will show uploaded files and
-          allow editing alt text, captions, and copying URLs.
+          <strong>Not yet implemented.</strong> Media upload requires a cloud storage backend (e.g.,
+          Cloudflare R2, AWS S3, or Vercel Blob). This page will show uploaded files and allow
+          editing alt text, captions, and copying URLs.
         </p>
       </div>
 

@@ -19,13 +19,7 @@ export type StaffRole = "SUPER_ADMIN" | "ADMIN";
 
 export type StaffStatus = "ACTIVE" | "DISABLED" | "INVITED";
 
-export type CourseLevel =
-  | "FOUNDATION"
-  | "BACHELOR"
-  | "MASTER"
-  | "PRE_MASTERS"
-  | "PHD"
-  | "DIPLOMA";
+export type CourseLevel = "FOUNDATION" | "BACHELOR" | "MASTER" | "PRE_MASTERS" | "PHD" | "DIPLOMA";
 
 export type AuditAction =
   | "ADMIN_LOGIN_SUCCESS"

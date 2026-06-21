@@ -4,13 +4,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { mainNavItems } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -43,7 +37,7 @@ export function MobileNav() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "rounded-md px-3 py-2 font-medium text-muted-foreground",
+                  "text-muted-foreground rounded-md px-3 py-2 font-medium",
                   active && "bg-accent text-primary",
                 )}
               >
@@ -51,10 +45,7 @@ export function MobileNav() {
               </Link>
             );
           })}
-          <Link
-            href={siteConfig.mainCta.href}
-            className={buttonVariants({ className: "mt-4" })}
-          >
+          <Link href={siteConfig.mainCta.href} className={buttonVariants({ className: "mt-4" })}>
             {siteConfig.mainCta.label}
           </Link>
         </nav>

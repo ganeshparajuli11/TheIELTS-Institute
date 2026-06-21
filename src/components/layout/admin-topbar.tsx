@@ -6,7 +6,8 @@ import { Bell, ChevronRight, Search } from "lucide-react";
 import { adminNavGroups } from "@/config/admin-navigation";
 import { AdminMobileNav } from "@/components/layout/admin-mobile-nav";
 import { ModeToggle } from "@/components/shared/mode-toggle";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -43,7 +44,7 @@ export function AdminTopbar() {
   const breadcrumbs = useBreadcrumbs();
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 shrink-0 items-center border-b border-border bg-background/85 px-4 backdrop-blur sm:px-6">
+    <header className="border-border bg-background/85 sticky top-0 z-30 flex h-16 shrink-0 items-center border-b px-4 backdrop-blur sm:px-6">
       <AdminMobileNav />
 
       {/* Breadcrumbs */}
@@ -53,14 +54,14 @@ export function AdminTopbar() {
           return (
             <span key={crumb.href} className="flex items-center gap-1">
               {index > 0 && (
-                <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/50" aria-hidden="true" />
+                <ChevronRight className="text-muted-foreground/50 h-3.5 w-3.5" aria-hidden="true" />
               )}
               {isLast ? (
-                <span className="text-sm font-medium text-foreground">{crumb.label}</span>
+                <span className="text-foreground text-sm font-medium">{crumb.label}</span>
               ) : (
                 <Link
                   href={crumb.href}
-                  className="text-sm text-muted-foreground hover:text-foreground"
+                  className="text-muted-foreground hover:text-foreground text-sm"
                 >
                   {crumb.label}
                 </Link>
@@ -75,7 +76,7 @@ export function AdminTopbar() {
         <Button
           variant="outline"
           size="sm"
-          className="hidden h-8 gap-2 text-muted-foreground sm:flex"
+          className="text-muted-foreground hidden h-8 gap-2 sm:flex"
           aria-label="Search"
           disabled
         >
@@ -100,33 +101,33 @@ export function AdminTopbar() {
 
         {/* User dropdown placeholder */}
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              className="h-8 w-8 rounded-full p-0"
-              aria-label="User menu"
-            >
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                <span className="text-xs font-semibold text-primary">A</span>
-              </div>
-            </Button>
+          <DropdownMenuTrigger
+            className={cn(buttonVariants({ variant: "ghost" }), "h-8 w-8 rounded-full p-0")}
+            aria-label="User menu"
+          >
+            <div className="bg-primary/10 flex h-8 w-8 items-center justify-center rounded-full">
+              <span className="text-primary text-xs font-semibold">A</span>
+            </div>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-52">
-            <DropdownMenuLabel className="text-xs font-normal text-muted-foreground">
+            <DropdownMenuLabel className="text-muted-foreground text-xs font-normal">
               {/* TODO: Replace with authenticated user data. */}
               Signed in as
               <br />
-              <span className="font-medium text-foreground">admin@example.com</span>
+              <span className="text-foreground font-medium">admin@example.com</span>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem disabled>Profile settings</DropdownMenuItem>
             <DropdownMenuItem disabled>Change password</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
-              <Link href="/login" className="text-destructive focus:text-destructive">
-                {/* TODO: Connect secure sign-out after auth backend is implemented. */}
-                Sign out
-              </Link>
+            <DropdownMenuItem
+              className="text-destructive focus:text-destructive"
+              onClick={() => {
+                window.location.href = "/login";
+              }}
+            >
+              {/* TODO: Connect secure sign-out after auth backend is implemented. */}
+              Sign out
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

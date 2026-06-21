@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Clock,
-  Mail,
-  MapPin,
-  MessageSquareText,
-  Phone,
-} from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, MessageSquareText, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
 import { CtaSection } from "@/components/shared/cta-section";
 import { FaqSection } from "@/components/sections/faq-section";
@@ -56,7 +49,7 @@ const contactMethods = [
 export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary text-white">
+      <section className="bg-primary relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <Image
             src="/images/stitch-students.jpg"
@@ -65,8 +58,8 @@ export default function ContactPage() {
             priority
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/10" />
+          <div className="bg-primary/60 absolute inset-0 mix-blend-multiply" />
+          <div className="from-primary via-primary/80 to-primary/10 absolute inset-0 bg-gradient-to-r" />
         </div>
 
         <div className="container-page relative z-10 grid min-h-[calc(82vh-4.5rem)] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr]">
@@ -74,13 +67,12 @@ export default function ContactPage() {
             <p className="label-caps inline-flex rounded-lg bg-white/20 px-3 py-1 text-white backdrop-blur-md">
               Contact the team
             </p>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-4xl leading-tight font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
               Speak with a UK study counselling team in Kathmandu
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
-              Send your enquiry, visit the Bagbazar office, or book a
-              counselling conversation so your UK study plan can start with the
-              right context.
+              Send your enquiry, visit the Bagbazar office, or book a counselling conversation so
+              your UK study plan can start with the right context.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
@@ -99,22 +91,22 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-white/25 bg-white/95 p-6 text-foreground shadow-2xl shadow-primary/30 backdrop-blur">
+          <div className="text-foreground shadow-primary/30 rounded-xl border border-white/25 bg-white/95 p-6 shadow-2xl backdrop-blur">
             <p className="label-caps text-primary">Enquiry guidance</p>
             <h2 className="mt-3 text-2xl font-bold">
               Share your academic background and preferred UK intake.
             </h2>
             <div className="mt-6 grid gap-3">
-              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
-                <MessageSquareText className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-foreground">
-                  Include your course interest, current education level, and
-                  IELTS status if available.
+              <div className="bg-muted flex items-start gap-3 rounded-lg p-4">
+                <MessageSquareText className="text-primary mt-0.5 size-5 shrink-0" />
+                <span className="text-foreground font-medium">
+                  Include your course interest, current education level, and IELTS status if
+                  available.
                 </span>
               </div>
-              <div className="flex items-start gap-3 rounded-lg bg-muted p-4">
-                <Clock className="mt-0.5 size-5 shrink-0 text-primary" />
-                <span className="font-medium text-foreground">
+              <div className="bg-muted flex items-start gap-3 rounded-lg p-4">
+                <Clock className="text-primary mt-0.5 size-5 shrink-0" />
+                <span className="text-foreground font-medium">
                   The team can respond with next-step counselling priorities.
                 </span>
               </div>
@@ -128,17 +120,15 @@ export default function ContactPage() {
           {contactMethods.map((method) => (
             <article
               key={method.label}
-              className="rounded-lg border border-border bg-white p-6 transition hover:border-primary hover:shadow-xl hover:shadow-primary/10"
+              className="border-border hover:border-primary hover:shadow-primary/10 rounded-lg border bg-white p-6 transition hover:shadow-xl"
             >
-              <div className="flex size-12 items-center justify-center rounded-lg bg-icon-bg text-primary">
+              <div className="bg-icon-bg text-primary flex size-12 items-center justify-center rounded-lg">
                 <method.icon className="size-6" />
               </div>
-              <p className="mt-5 text-sm font-bold uppercase tracking-wide text-primary">
+              <p className="text-primary mt-5 text-sm font-bold tracking-wide uppercase">
                 {method.label}
               </p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                {method.value}
-              </p>
+              <p className="text-muted-foreground mt-2 text-sm leading-6">{method.value}</p>
             </article>
           ))}
         </div>
@@ -151,10 +141,9 @@ export default function ContactPage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               Tell us where you are in your UK study journey
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-              The form stays frontend-only for now. Later it can connect to the
-              enquiry system from the admin panel without changing this public
-              page layout.
+            <p className="text-muted-foreground mt-5 max-w-2xl text-lg leading-8">
+              The form stays frontend-only for now. Later it can connect to the enquiry system from
+              the admin panel without changing this public page layout.
             </p>
             <div className="mt-8">
               <ContactForm />
@@ -164,18 +153,14 @@ export default function ContactPage() {
           <aside className="premium-card h-fit p-6">
             <p className="label-caps text-primary">Contact information</p>
             <h2 className="mt-3 text-2xl font-bold">Visit or contact us</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">
-              {siteConfig.shortDescription}
-            </p>
+            <p className="text-muted-foreground mt-4 leading-7">{siteConfig.shortDescription}</p>
             <div className="mt-6 space-y-4">
               {contactMethods.map((method) => (
                 <div key={method.label} className="flex gap-3">
-                  <method.icon className="mt-1 size-5 shrink-0 text-primary" />
+                  <method.icon className="text-primary mt-1 size-5 shrink-0" />
                   <div>
                     <p className="font-bold">{method.label}</p>
-                    <p className="text-sm leading-6 text-muted-foreground">
-                      {method.value}
-                    </p>
+                    <p className="text-muted-foreground text-sm leading-6">{method.value}</p>
                   </div>
                 </div>
               ))}
@@ -191,7 +176,7 @@ export default function ContactPage() {
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
               {contactContent.mapTitle}
             </h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            <p className="text-muted-foreground mt-5 text-lg leading-8">
               {contactContent.mapDescription}
             </p>
           </div>
@@ -201,13 +186,10 @@ export default function ContactPage() {
             className="flex min-h-80 items-center justify-center rounded-lg border border-white/70 bg-white p-8 text-center shadow-sm"
           >
             <div>
-              <MapPin className="mx-auto size-12 text-primary" />
-              <p className="mt-4 text-xl font-bold">
-                {contactContent.mapLabel}
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Interactive map embed can be connected after the confirmed
-                office listing is ready.
+              <MapPin className="text-primary mx-auto size-12" />
+              <p className="mt-4 text-xl font-bold">{contactContent.mapLabel}</p>
+              <p className="text-muted-foreground mt-2 text-sm">
+                Interactive map embed can be connected after the confirmed office listing is ready.
               </p>
             </div>
           </div>

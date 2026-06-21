@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { adminNavGroups } from "@/config/admin-navigation";
@@ -14,12 +15,16 @@ export function AdminSidebar() {
   }
 
   return (
-    <aside className="fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-border bg-card lg:flex">
-      <div className="flex h-16 shrink-0 items-center border-b border-border px-6">
+    <aside className="border-border bg-card fixed inset-y-0 left-0 hidden w-64 flex-col border-r lg:flex">
+      <div className="border-border flex h-16 shrink-0 items-center border-b px-6">
         <Link href="/admin" className="flex items-center gap-2.5">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
-            <span className="text-xs font-bold text-primary-foreground">TI</span>
-          </div>
+          <Image
+            src="/logo.jpg"
+            alt="The IELTS Institute"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-md bg-white object-contain"
+          />
           <span className="text-sm font-semibold tracking-tight">IELTS Admin</span>
         </Link>
       </div>
@@ -27,7 +32,7 @@ export function AdminSidebar() {
       <nav className="flex-1 overflow-y-auto px-3 py-4">
         {adminNavGroups.map((group) => (
           <div key={group.label} className="mb-5">
-            <p className="mb-1 px-3 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">
+            <p className="text-muted-foreground/60 mb-1 px-3 text-[10px] font-semibold tracking-widest uppercase">
               {group.label}
             </p>
             <ul className="grid gap-0.5">
@@ -59,15 +64,15 @@ export function AdminSidebar() {
         ))}
       </nav>
 
-      <div className="shrink-0 border-t border-border px-4 py-3">
+      <div className="border-border shrink-0 border-t px-4 py-3">
         {/* TODO: Replace with real user session data from auth backend. */}
         <div className="flex items-center gap-3 rounded-md px-2 py-2">
-          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10">
-            <span className="text-xs font-semibold text-primary">A</span>
+          <div className="bg-primary/10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full">
+            <span className="text-primary text-xs font-semibold">A</span>
           </div>
           <div className="min-w-0">
             <p className="truncate text-xs font-medium">Admin User</p>
-            <p className="truncate text-[10px] text-muted-foreground">TODO: connect auth</p>
+            <p className="text-muted-foreground truncate text-[10px]">TODO: connect auth</p>
           </div>
         </div>
       </div>

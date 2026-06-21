@@ -62,9 +62,7 @@ export function ContactForm() {
         toast.error(data.message ?? "Something went wrong. Please try again.");
         return;
       }
-      toast.success(
-        data.message ?? "Your enquiry has been received. We will be in touch soon.",
-      );
+      toast.success(data.message ?? "Your enquiry has been received. We will be in touch soon.");
       form.reset();
     } catch {
       toast.error("Unable to send your enquiry. Please check your connection and try again.");
@@ -73,10 +71,7 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="premium-card grid gap-5 p-6"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="premium-card grid gap-5 p-6">
         <FormField
           control={form.control}
           name="name"
@@ -131,18 +126,10 @@ export function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="counselling">
-                    UK study counselling
-                  </SelectItem>
-                  <SelectItem value="application">
-                    Application support
-                  </SelectItem>
-                  <SelectItem value="ielts">
-                    IELTS preparation guidance
-                  </SelectItem>
-                  <SelectItem value="visa">
-                    Visa documentation guidance
-                  </SelectItem>
+                  <SelectItem value="counselling">UK study counselling</SelectItem>
+                  <SelectItem value="application">Application support</SelectItem>
+                  <SelectItem value="ielts">IELTS preparation guidance</SelectItem>
+                  <SelectItem value="visa">Visa documentation guidance</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -170,24 +157,17 @@ export function ContactForm() {
               <FormControl>
                 <Checkbox
                   checked={field.value}
-                  onCheckedChange={(checked) =>
-                    field.onChange(Boolean(checked))
-                  }
+                  onCheckedChange={(checked) => field.onChange(Boolean(checked))}
                 />
               </FormControl>
               <div>
-                <FormLabel>
-                  I consent to being contacted about my enquiry.
-                </FormLabel>
+                <FormLabel>I consent to being contacted about my enquiry.</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>
           )}
         />
-        <Button
-          type="submit"
-          className="min-h-14 rounded-lg text-base font-bold"
-        >
+        <Button type="submit" className="min-h-14 rounded-lg text-base font-bold">
           Send enquiry
         </Button>
       </form>
