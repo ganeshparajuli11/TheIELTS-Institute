@@ -13,6 +13,7 @@ export function HeroSection() {
           alt="Big Ben and the Palace of Westminster at sunset"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
         />
         <div className="bg-primary/45 absolute inset-0 mix-blend-multiply" />

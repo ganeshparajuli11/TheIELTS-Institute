@@ -56,6 +56,7 @@ export default function ContactPage() {
             alt="Students on a campus used for UK study contact enquiry"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="bg-primary/60 absolute inset-0 mix-blend-multiply" />

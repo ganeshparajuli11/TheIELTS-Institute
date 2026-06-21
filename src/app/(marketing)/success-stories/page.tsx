@@ -51,6 +51,7 @@ export default function SuccessStoriesPage() {
             alt="Students walking through a campus representing UK study stories"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="bg-primary/60 absolute inset-0 mix-blend-multiply" />

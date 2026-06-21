@@ -91,6 +91,7 @@ export default function StudyInUkPage() {
             alt="London landmark representing UK study planning"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="bg-primary/55 absolute inset-0 mix-blend-multiply" />

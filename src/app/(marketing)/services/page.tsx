@@ -64,6 +64,7 @@ export default function ServicesPage() {
             alt="UK landmark used for study counselling service planning"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="bg-primary/55 absolute inset-0 mix-blend-multiply" />

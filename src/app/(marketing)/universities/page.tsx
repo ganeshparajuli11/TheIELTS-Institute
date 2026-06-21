@@ -61,6 +61,7 @@ export default function UniversitiesPage() {
             alt="Students walking through a UK academic campus"
             fill
             priority
+            sizes="100vw"
             className="object-cover object-center"
           />
           <div className="bg-primary/60 absolute inset-0 mix-blend-multiply" />
